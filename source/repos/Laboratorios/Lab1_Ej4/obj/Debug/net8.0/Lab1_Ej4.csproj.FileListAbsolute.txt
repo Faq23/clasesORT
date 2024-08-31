@@ -1,0 +1,14 @@
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\bin\Debug\net8.0\Lab1_Ej4.exe
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\bin\Debug\net8.0\Lab1_Ej4.deps.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\bin\Debug\net8.0\Lab1_Ej4.runtimeconfig.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\bin\Debug\net8.0\Lab1_Ej4.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\bin\Debug\net8.0\Lab1_Ej4.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.AssemblyInfoInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.AssemblyInfo.cs
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.csproj.CoreCompileInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\refint\Lab1_Ej4.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\Lab1_Ej4.genruntimeconfig.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej4\obj\Debug\net8.0\ref\Lab1_Ej4.dll

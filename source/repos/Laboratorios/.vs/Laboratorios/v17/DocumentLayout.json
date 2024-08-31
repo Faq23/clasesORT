@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00DD2A60-F953-4299-9EE8-E5F400956C04}|Lab1_Ej10\\Lab1_Ej10.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00DD2A60-F953-4299-9EE8-E5F400956C04}|Lab1_Ej10\\Lab1_Ej10.csproj|solutionrelative:lab1_ej10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885969DB-9596-4AC5-BAEC-DC64AC56CE27}|Lab1_Ej9\\Lab1_Ej9.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{885969DB-9596-4AC5-BAEC-DC64AC56CE27}|Lab1_Ej9\\Lab1_Ej9.csproj|solutionrelative:lab1_ej9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D27C45-AE51-4059-9D4B-BC244BF00A78}|Lab1_Ej2\\Lab1_Ej2.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D27C45-AE51-4059-9D4B-BC244BF00A78}|Lab1_Ej2\\Lab1_Ej2.csproj|solutionrelative:lab1_ej2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79061A7B-F472-463D-B320-565E67C00920}|Lab1_Ej8\\Lab1_Ej8.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79061A7B-F472-463D-B320-565E67C00920}|Lab1_Ej8\\Lab1_Ej8.csproj|solutionrelative:lab1_ej8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAA1B025-3D8A-4E16-9D48-5960428A8275}|Lab1_Ej6\\Lab1_Ej6.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAA1B025-3D8A-4E16-9D48-5960428A8275}|Lab1_Ej6\\Lab1_Ej6.csproj|solutionrelative:lab1_ej6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{605303BA-C591-477A-B40F-FBBB396BD58A}|Lab1_Ej7\\Lab1_Ej7.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{605303BA-C591-477A-B40F-FBBB396BD58A}|Lab1_Ej7\\Lab1_Ej7.csproj|solutionrelative:lab1_ej7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85190121-8EC6-4F2F-89F8-9F9538ED8FB0}|Lab1_Ej5\\Lab1_Ej5.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85190121-8EC6-4F2F-89F8-9F9538ED8FB0}|Lab1_Ej5\\Lab1_Ej5.csproj|solutionrelative:lab1_ej5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5C83833-97F3-412F-83B7-D29EBDD0A7DC}|Lab1_Ej4\\Lab1_Ej4.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5C83833-97F3-412F-83B7-D29EBDD0A7DC}|Lab1_Ej4\\Lab1_Ej4.csproj|solutionrelative:lab1_ej4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877EB3A6-A2EA-422A-8D05-2B911EF84143}|Lab1_Ej3\\Lab1_Ej3.csproj|c:\\users\\faqma\\source\\repos\\laboratorios\\lab1_ej3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877EB3A6-A2EA-422A-8D05-2B911EF84143}|Lab1_Ej3\\Lab1_Ej3.csproj|solutionrelative:lab1_ej3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej10\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej10\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T01:17:26.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej9\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej9\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej9\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej9\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T01:01:35.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej8\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej8\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej8\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej8\\Program.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwB4AAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T00:49:45.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej7\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej7\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej7\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej7\\Program.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAIAwwCcAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T00:16:10.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej6\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej6\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej6\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej6\\Program.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwFUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T23:55:08.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej5\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej5\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej5\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej5\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T23:48:18.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej4\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej4\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej4\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej4\\Program.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAzwBwAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T23:30:08.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej3\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej3\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej3\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej3\\Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T23:20:46.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej2\\Program.cs",
+              "RelativeDocumentMoniker": "Lab1_Ej2\\Program.cs",
+              "ToolTip": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej2\\Program.cs",
+              "RelativeToolTip": "Lab1_Ej2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T23:06:15.243Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

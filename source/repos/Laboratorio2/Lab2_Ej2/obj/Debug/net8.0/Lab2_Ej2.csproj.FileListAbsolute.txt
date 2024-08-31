@@ -1,0 +1,14 @@
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\bin\Debug\net8.0\Lab2_Ej2.exe
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\bin\Debug\net8.0\Lab2_Ej2.deps.json
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\bin\Debug\net8.0\Lab2_Ej2.runtimeconfig.json
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\bin\Debug\net8.0\Lab2_Ej2.dll
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\bin\Debug\net8.0\Lab2_Ej2.pdb
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.AssemblyInfoInputs.cache
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.AssemblyInfo.cs
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.csproj.CoreCompileInputs.cache
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.dll
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\refint\Lab2_Ej2.dll
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.pdb
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\Lab2_Ej2.genruntimeconfig.cache
+C:\Users\faqma\source\repos\Laboratorio2\Lab2_Ej2\obj\Debug\net8.0\ref\Lab2_Ej2.dll

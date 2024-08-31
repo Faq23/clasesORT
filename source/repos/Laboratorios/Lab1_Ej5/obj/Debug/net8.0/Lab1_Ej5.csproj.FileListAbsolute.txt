@@ -1,0 +1,14 @@
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\bin\Debug\net8.0\Lab1_Ej5.exe
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\bin\Debug\net8.0\Lab1_Ej5.deps.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\bin\Debug\net8.0\Lab1_Ej5.runtimeconfig.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\bin\Debug\net8.0\Lab1_Ej5.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\bin\Debug\net8.0\Lab1_Ej5.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.AssemblyInfoInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.AssemblyInfo.cs
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.csproj.CoreCompileInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\refint\Lab1_Ej5.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\Lab1_Ej5.genruntimeconfig.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej5\obj\Debug\net8.0\ref\Lab1_Ej5.dll

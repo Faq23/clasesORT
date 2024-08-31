@@ -1,0 +1,14 @@
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\bin\Debug\net8.0\Lab1_Ej7.exe
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\bin\Debug\net8.0\Lab1_Ej7.deps.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\bin\Debug\net8.0\Lab1_Ej7.runtimeconfig.json
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\bin\Debug\net8.0\Lab1_Ej7.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\bin\Debug\net8.0\Lab1_Ej7.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.AssemblyInfoInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.AssemblyInfo.cs
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.csproj.CoreCompileInputs.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\refint\Lab1_Ej7.dll
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.pdb
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\Lab1_Ej7.genruntimeconfig.cache
+C:\Users\faqma\source\repos\Laboratorios\Lab1_Ej7\obj\Debug\net8.0\ref\Lab1_Ej7.dll
