@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorio2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C68ABDF-AA79-415E-98AE-890122D852B4}|Lab2_Ej8\\Lab2_Ej8.csproj|c:\\users\\facundo\\clasesort\\source\\repos\\laboratorio2\\lab2_ej8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C68ABDF-AA79-415E-98AE-890122D852B4}|Lab2_Ej8\\Lab2_Ej8.csproj|solutionrelative:lab2_ej8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C68ABDF-AA79-415E-98AE-890122D852B4}|Lab2_Ej8\\Lab2_Ej8.csproj|c:\\users\\facundo\\clasesort\\source\\repos\\laboratorio2\\lab2_ej8\\apartamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C68ABDF-AA79-415E-98AE-890122D852B4}|Lab2_Ej8\\Lab2_Ej8.csproj|solutionrelative:lab2_ej8\\apartamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Apartamento.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorio2\\Lab2_Ej8\\Apartamento.cs",
+              "RelativeDocumentMoniker": "Lab2_Ej8\\Apartamento.cs",
+              "ToolTip": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorio2\\Lab2_Ej8\\Apartamento.cs",
+              "RelativeToolTip": "Lab2_Ej8\\Apartamento.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T14:12:38.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorio2\\Lab2_Ej8\\Program.cs",
+              "RelativeDocumentMoniker": "Lab2_Ej8\\Program.cs",
+              "ToolTip": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorio2\\Lab2_Ej8\\Program.cs",
+              "RelativeToolTip": "Lab2_Ej8\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T14:10:16.614Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

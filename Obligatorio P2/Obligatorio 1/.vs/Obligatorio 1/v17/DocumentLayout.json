@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DB6A25-1E8B-481F-8162-C21A759B7008}|Interfaz\\Interfaz.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\interfaz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DB6A25-1E8B-481F-8162-C21A759B7008}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DB6A25-1E8B-481F-8162-C21A759B7008}|Interfaz\\Interfaz.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\interfaz\\precarga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DB6A25-1E8B-481F-8162-C21A759B7008}|Interfaz\\Interfaz.csproj|solutionrelative:interfaz\\precarga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\estado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\estado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\subasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\subasta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\oferta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\oferta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|c:\\users\\facundo\\source\\repos\\obligatorio 1\\dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4C2CE51-1E22-4F27-9050-E94FFFD411FE}|Dominio\\Dominio.csproj|solutionrelative:dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Precarga.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Interfaz\\Precarga.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Precarga.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Interfaz\\Precarga.cs",
+              "RelativeToolTip": "Interfaz\\Precarga.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAgwDAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:24:12.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Interfaz\\Program.cs",
+              "RelativeDocumentMoniker": "Interfaz\\Program.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Interfaz\\Program.cs",
+              "RelativeToolTip": "Interfaz\\Program.cs",
+              "ViewState": "AgIAAD0CAAAAAAAAAAAAwE0CAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T01:21:54.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sistema.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Sistema.cs",
+              "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Sistema.cs",
+              "RelativeToolTip": "Dominio\\Sistema.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAowPYAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:07:51.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Administrador.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Administrador.cs",
+              "RelativeDocumentMoniker": "Dominio\\Administrador.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Administrador.cs",
+              "RelativeToolTip": "Dominio\\Administrador.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowC8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:13:55.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Cliente.cs",
+              "RelativeDocumentMoniker": "Dominio\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Cliente.cs",
+              "RelativeToolTip": "Dominio\\Cliente.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBAAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:08:28.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Publicacion.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Publicacion.cs",
+              "RelativeDocumentMoniker": "Dominio\\Publicacion.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Publicacion.cs",
+              "RelativeToolTip": "Dominio\\Publicacion.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAywEEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:27:10.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Articulo.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Articulo.cs",
+              "RelativeDocumentMoniker": "Dominio\\Articulo.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Articulo.cs",
+              "RelativeToolTip": "Dominio\\Articulo.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:16:28.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Usuario.cs",
+              "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Usuario.cs",
+              "RelativeToolTip": "Dominio\\Usuario.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwDEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T22:39:20.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Oferta.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Oferta.cs",
+              "RelativeDocumentMoniker": "Dominio\\Oferta.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Oferta.cs",
+              "RelativeToolTip": "Dominio\\Oferta.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:39:57.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Subasta.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Subasta.cs",
+              "RelativeDocumentMoniker": "Dominio\\Subasta.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Subasta.cs",
+              "RelativeToolTip": "Dominio\\Subasta.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwB4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:39:44.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Venta.cs",
+              "RelativeDocumentMoniker": "Dominio\\Venta.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Venta.cs",
+              "RelativeToolTip": "Dominio\\Venta.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:37:26.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Estado.cs",
+              "DocumentMoniker": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Estado.cs",
+              "RelativeDocumentMoniker": "Dominio\\Estado.cs",
+              "ToolTip": "C:\\Users\\Facundo\\source\\repos\\Obligatorio 1\\Dominio\\Estado.cs",
+              "RelativeToolTip": "Dominio\\Estado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T23:26:05.846Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

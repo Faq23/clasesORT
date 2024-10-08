@@ -1,0 +1,15 @@
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\bin\Debug\net8.0\Lab2_Ej8.exe
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\bin\Debug\net8.0\Lab2_Ej8.deps.json
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\bin\Debug\net8.0\Lab2_Ej8.runtimeconfig.json
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\bin\Debug\net8.0\Lab2_Ej8.dll
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\bin\Debug\net8.0\Lab2_Ej8.pdb
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.AssemblyInfoInputs.cache
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.AssemblyInfo.cs
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.sourcelink.json
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.dll
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\refint\Lab2_Ej8.dll
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.pdb
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\Lab2_Ej8.genruntimeconfig.cache
+C:\Users\Facundo\clasesORT\source\repos\Laboratorio2\Lab2_Ej8\obj\Debug\net8.0\ref\Lab2_Ej8.dll

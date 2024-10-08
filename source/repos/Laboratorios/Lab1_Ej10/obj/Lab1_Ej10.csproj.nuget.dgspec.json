@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj": {}
+    "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj": {}
   },
   "projects": {
-    "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj": {
+    "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj",
+        "projectUniqueName": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj",
         "projectName": "Lab1_Ej10",
-        "projectPath": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj",
-        "packagesPath": "C:\\Users\\faqma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\faqma\\source\\repos\\Laboratorios\\Lab1_Ej10\\obj\\",
+        "projectPath": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorios\\Lab1_Ej10\\Lab1_Ej10.csproj",
+        "packagesPath": "C:\\Users\\Facundo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Facundo\\clasesORT\\source\\repos\\Laboratorios\\Lab1_Ej10\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\faqma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Facundo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
