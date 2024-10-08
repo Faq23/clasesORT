@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Facundo\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj": {}
+    "C:\\Users\\faqma\\clasesORT\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Facundo\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj": {
+    "C:\\Users\\faqma\\clasesORT\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Facundo\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj",
+        "projectUniqueName": "C:\\Users\\faqma\\clasesORT\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj",
         "projectName": "Lab3_Ej3",
-        "projectPath": "C:\\Users\\Facundo\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj",
-        "packagesPath": "C:\\Users\\Facundo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Facundo\\source\\repos\\Laboratorio3\\Lab3_Ej3\\obj\\",
+        "projectPath": "C:\\Users\\faqma\\clasesORT\\source\\repos\\Laboratorio3\\Lab3_Ej3\\Lab3_Ej3.csproj",
+        "packagesPath": "C:\\Users\\faqma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\faqma\\clasesORT\\source\\repos\\Laboratorio3\\Lab3_Ej3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Facundo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\faqma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
