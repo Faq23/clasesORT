@@ -23,7 +23,7 @@ namespace Dominio
             Ofertas.Add(new Oferta(cliente, monto));
         }
 
-        public void FinalizarSubasta(Administrador usuario)
+        public override void FinalizarPublicacion(Usuario administrador)
         {
             Oferta mejorOferta = new Oferta();
             bool found = false;
@@ -44,7 +44,7 @@ namespace Dominio
                 if (mejorOferta.Cliente.Saldo >= mejorOferta.Monto)
                 {
                     Cliente = mejorOferta.Cliente;
-                    Usuario = usuario;
+                    Usuario = administrador as Administrador;
                     FechaFin = DateTime.Now;
                     Estado = Estado.Cerrada;
 

@@ -1,15 +1,16 @@
 ﻿namespace Interfaz
 {
     using Dominio;
+    using System.Diagnostics.Tracing;
     using System.Runtime.InteropServices;
 
     internal class Program
     {
+        Sistema system = Sistema.Instance;
+
         static void Main(string[] args)
         {
             Sistema system = Sistema.Instance;
-
-            Precarga.PrecargaDatos();
 
             EntregaMenu();
 
@@ -58,6 +59,7 @@
         private static void ClientMenu(Cliente userLogued)
         {
             Sistema system = Sistema.Instance;
+
             int exit = 0;
 
             while (exit == 0)
@@ -87,9 +89,9 @@
                             {
                                 Console.WriteLine("##### VENTAS #####");
 
-                                foreach (Venta v in system.Publicaciones)
+                                foreach (Publicacion v in system.Publicaciones)
                                 {
-                                    if (v.Estado == Estado.Abierta)
+                                    if (v is Venta && v.Estado == Estado.Abierta)
                                     {
                                         Console.WriteLine(v.ID + " - " + v.Nombre);
                                     }
@@ -205,9 +207,10 @@
             
         }
 
-        private static void AdminMenu(Administrador userLogued)
+        private void AdminMenu(Administrador userLogued)
         {
             Sistema system = Sistema.Instance;
+
             int exit = 0;
 
             while (exit == 0)
@@ -501,7 +504,7 @@
                     Console.WriteLine("1 - Listado Clientes");
                     Console.WriteLine("2 - Listar Articulos por categoria");
                     Console.WriteLine("3 - Alta de Articulo");
-                    Console.WriteLine("3 - Listar Publicaciones por fecha");
+                    Console.WriteLine("4 - Listar Publicaciones por fecha");
                     Console.WriteLine("0 - Salir");
 
                     Console.WriteLine("################");
@@ -520,12 +523,20 @@
                             {
                                 Console.WriteLine("##### LISTADO CLIENTES #####");
 
+                                int count = 0;
+
                                 foreach (Usuario c in system.Usuarios)
                                 {
                                     if (c is Cliente)
                                     {
-                                        Console.WriteLine(c.ID + " - " + c.Nombre + " " + c.Apellido);
+                                        count ++;
+                                        Console.WriteLine(c.ID + " - " + c.Nombre + " " + c.Apellido + " - " + c.Email);
                                     }
+                                }
+
+                                if (count < 0)
+                                {
+                                    Console.WriteLine("No existen clientes en el sistema.");
                                 }
 
                                 Console.WriteLine("############################");
@@ -602,12 +613,68 @@
                                     switch(opcionElegida)
                                     {
                                         case 1: cancel = 1; break;
-                                        case 2: system.AgregarArticulo(nombre, categoria, precio); break;
+                                        case 2:
+                                            if (precio <= 0)
+                                            {
+                                                Console.WriteLine("El precio debe ser mayor a 0.");
+                                            }
+                                            else
+                                            {
+                                                system.AgregarArticulo(nombre, categoria, precio);
+                                                cancel = 2; // Le asigno el valor 2 a la variable para salir del while y diferenciarlo de lo cancelado
+                                            }
+                                            
+                                            break;
                                         default: break;
                                     }
                                 }
 
-                                Console.WriteLine("El articulo fue ingresado con éxito.");
+                                if (cancel != 1)
+                                {
+                                    Console.WriteLine("El articulo fue ingresado con éxito.");
+                                }
+                                
+                                Console.ReadKey();
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                                Console.WriteLine("Presione cualquier tecla para salir");
+                                Console.ReadKey();
+                            }
+
+                            break;
+                        case 4:
+
+                            try
+                            {
+
+                                Console.WriteLine("Ingrese la fecha de inicio (01/01/0001): ");
+                                DateTime fechaInicio = DateTime.Parse(Console.ReadLine() + " 00:00:00");
+
+                                Console.WriteLine("Ingrese la fecha de fin (31/12/9999): ");
+                                DateTime fechaFin = DateTime.Parse(Console.ReadLine() + " 23:59:59");
+
+                                if (fechaFin >= fechaInicio)
+                                {
+                                    List<Publicacion> publicaciones = system.ObtenerPublicacionesEntreFechas(fechaInicio, fechaFin);
+
+                                    Console.WriteLine("##### PUBLICACIONES ENTRE " + fechaInicio + " y " + fechaFin + " #####");
+
+                                    foreach (Publicacion p in publicaciones)
+                                    {
+                                        Console.WriteLine(p.ID + " - " + p.Nombre + " - " + p.Estado + " publicado el: " + p.FechaPublicacion);
+                                    }
+                                } 
+                                else
+                                {
+                                    Console.WriteLine("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                                }
+
+                                Console.WriteLine("#########################################################################");
+
+                                Console.WriteLine("Presione cualquier tecla para salir");
                                 Console.ReadKey();
 
                             }

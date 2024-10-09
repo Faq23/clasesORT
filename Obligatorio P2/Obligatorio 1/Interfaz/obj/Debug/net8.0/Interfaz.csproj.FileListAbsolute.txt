@@ -19,3 +19,25 @@ C:\Users\Facundo\source\repos\Obligatorio 1\Interfaz\obj\Debug\net8.0\refint\Int
 C:\Users\Facundo\source\repos\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.pdb
 C:\Users\Facundo\source\repos\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.genruntimeconfig.cache
 C:\Users\Facundo\source\repos\Obligatorio 1\Interfaz\obj\Debug\net8.0\ref\Interfaz.dll
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Dominio.runtimeconfig.json
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Dominio.exe
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Interfaz.exe
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Interfaz.deps.json
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Interfaz.runtimeconfig.json
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Interfaz.dll
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Interfaz.pdb
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Dominio.dll
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\bin\Debug\net8.0\Dominio.pdb
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.csproj.AssemblyReference.cache
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.AssemblyInfoInputs.cache
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.AssemblyInfo.cs
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.csproj.CoreCompileInputs.cache
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.sourcelink.json
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.csproj.Up2Date
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.dll
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\refint\Interfaz.dll
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.pdb
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\Interfaz.genruntimeconfig.cache
+C:\Users\faqma\clasesORT\Obligatorio P2\Obligatorio 1\Interfaz\obj\Debug\net8.0\ref\Interfaz.dll

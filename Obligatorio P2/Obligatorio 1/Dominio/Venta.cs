@@ -20,12 +20,14 @@ namespace Dominio
             OfertaRelampago = false;
             Valor = valor;
         }
-        public void FinalizarCompra(Cliente cliente)
+        public override void FinalizarPublicacion(Usuario cliente)
         {
-            if (cliente.Saldo >= Valor)
+            Cliente comprador = cliente as Cliente;
+
+            if (comprador.Saldo >= Valor)
             {
-                Cliente = cliente;
-                Usuario = cliente;
+                Cliente = comprador;
+                Usuario = comprador;
                 FechaFin = DateTime.Now;
                 Estado = Estado.Cerrada;
             }

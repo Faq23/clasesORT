@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Usuario
+    public class Usuario : IValidable
     {
         // Properties
 
@@ -38,7 +38,7 @@ namespace Dominio
 
         // Metodos
 
-        private void Validacion()
+        public void Validacion()
         {
             ValidarNombre();
             ValidarApellido();

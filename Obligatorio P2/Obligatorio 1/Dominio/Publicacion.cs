@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Publicacion
+    public abstract class Publicacion : IValidable
     {
         // Properties
 
@@ -42,7 +42,7 @@ namespace Dominio
 
         // Metodos
 
-        private void Validacion()
+        public void Validacion()
         {
             ValidarArticulos();
             ValidarNombre();
@@ -67,6 +67,8 @@ namespace Dominio
                 throw new Exception("Para crear una publicación debe ingresar una lista con Articulos");
             }
         }
+
+        public virtual void FinalizarPublicacion(Usuario usuario) { }
 
         public void CancelarPublicacion(Administrador administrador)
         {
