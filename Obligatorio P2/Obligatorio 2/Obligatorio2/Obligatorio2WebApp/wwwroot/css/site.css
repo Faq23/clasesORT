@@ -1,0 +1,394 @@
+:root {
+    --colorPrincipal: #495371;
+    --colorContraste: #FFF;
+    --colorLuz: #F1E0AC;
+    --colorBTN: #FC8A15;
+    --colorBTNHover: #EC9B3B;
+    --colorNegativoBG: #B4B4B8;
+    --colorNegativoText: #C7C8CC;
+    --colorError: #8C0000;
+
+    --fontTitulo: "Passion One", sans-serif;
+    --fontText: "Montserrat", sans-serif;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+footer,
+header {
+    font-family: var(--fontText);
+    background-color: var(--colorPrincipal);
+    color: var(--colorContraste);
+}
+
+body {
+    color: var(--colorPrincipal);
+    margin-bottom: 60px;
+}
+
+/* MI CSS */
+
+.container-full {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+/* LOGO */
+
+.logo {
+    width: 3rem;
+}
+
+/* NAV & FOOTER */
+
+nav {
+    font-family: var(--fontText);
+    background-color: var(--colorPrincipal);
+    color: var(--colorContraste);
+}
+
+nav a {
+    font-family: var(--fontText);
+    color: var(--colorContraste);
+}
+
+nav a:hover {
+    color: var(--colorContraste);
+}
+
+.nav-link {
+    color: var(--colorContraste);
+}
+
+.nav-link:hover {
+    color: var(--colorLuz);
+}
+
+.nav-link:hover svg {
+    fill: var(--colorLuz);
+}
+
+footer div {
+    color: var(--colorContraste);
+    font-family: var(--fontText);
+}
+
+/* LOGIN Y REGISTER */
+.container-home {
+    flex: 1;
+    max-width: 100%;
+    margin-top: 9rem;
+}
+
+.home-modal {
+    color: var(--colorContraste);
+    background-color: var(--colorPrincipal);
+    width: 100%;
+    height: 30rem;
+}
+
+.home-modal__enfasis {
+    z-index: 1000;
+    transition: all 0.5s ease;
+    transform: scale(1); /* Estado inicial */
+}
+
+.home-modal__enfasis .form-input::placeholder {
+    color: var(--colorContraste);
+}
+
+.home-modal__enfasis.animate {
+    transform: scale(1.05); /* Estado final */
+}
+
+.home-modal__inaccesible {
+    z-index: 1;
+    background-color: var(--colorNegativoBG);
+    color: var(--colorNegativoText);
+    transition: all 0.5s ease;
+    transform: scale(1.05); /* Estado inicial */
+}
+
+.home-modal__inaccesible .form-input::placeholder {
+    color: var(--colorNegativoText);
+}
+
+.home-modal__inaccesible.animate {
+    transform: scale(1); /* Estado final */
+}
+
+.register {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.login {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.form-input {
+    color : white;
+    background-color : transparent;
+    border : none;
+    border-bottom : 1px white solid;
+}
+
+.form-input::placeholder {
+    color : white;
+}
+
+.form-input:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px white solid;
+    box-shadow: 0 0 3px 0 var(--colorLuz);
+    color: white;
+}
+
+.form-input:disabled {
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px white solid;
+}
+
+.btn-menu {
+    color: white;
+    font-weight: bold;
+    background-color: var(--colorBTN);
+    border: none;
+    width: 75%;
+}
+
+.btn-menu:hover {
+    background-color: var(--colorBTNHover);
+}
+
+.home-modal__inaccesible .btn-menu {
+    background-color: var(--colorNegativoText);
+}
+
+/* ALERTAS */
+
+.alert-modal__home {
+    position: absolute;
+    top: -7rem;
+    right: -15rem;
+    padding: .5rem;
+    margin: 1rem;
+}
+
+.alert-modal {
+    position: absolute;
+    top: 0rem;
+    right: -15rem;
+    padding: .5rem;
+    margin: 1rem;
+}
+
+.alert-modal__fadeOut {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Cliente */
+
+.modal-bienvenida {
+    padding: 5rem;
+    margin-top: 10rem;
+}
+
+.modal-bienvenida h1 {
+    color: var(--colorPrincipal);
+    font-family: var(--fontTitulo);
+    font-size: 4rem;
+}
+
+.modal-bienvenida h1 strong {
+    font-family: var(--fontTitulo);
+    font-size: 4.5rem;
+}
+
+.modal-perfil {
+    margin-top: 4rem;
+    font-family: var(--fontText);
+    font-size: 1.4rem;
+    gap: 6rem;
+    color: var(--colorPrincipal);
+}
+
+.modal-perfil__img {
+    width: 25rem;
+}
+
+.modal-perfil h1 {
+    font-size: 4rem;
+    margin: 4rem 0 2rem 0;
+    font-family: var(--fontTitulo);
+}
+
+.modal-perfil .btn-success {
+    border-radius: 10rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 3px solid var(--colorPrincipal);
+}
+
+.modal-perfil .btn-success:hover {
+    cursor: pointer;
+}
+
+.modal-perfil .form-input {
+    color: var(--colorPrincipal);
+    border: 3px solid var(--colorPrincipal);
+    border-radius: .5rem;
+    font-size: 1.2rem;
+}
+
+/* PUBLICACIONES */
+
+.modal-publicaciones {
+    color: var(--colorPrincipal);
+    font-family: var(--fontText);
+}
+
+.modal-publicaciones h1 {
+    font-size: 4rem;
+    font-family: var(--fontTitulo);
+}
+
+.modal-publicaciones table {
+    color: var(--colorPrincipal);
+    border: 2px solid var(--colorPrincipal);
+    font-size: 1rem;
+    border-collapse: collapse;
+}
+
+.modal-publicaciones .table thead th {
+    background-color: #EAEAEA;
+}
+
+.modal-publicaciones .table td a {
+    color: var(--colorBTN);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-publicaciones .table a:hover {
+    color: var(--colorBTNHover);
+}
+
+.modal-publicaciones .table .tr-Cancelada td,
+.modal-publicaciones .table .tr-Cancelada a {
+    text-decoration: line-through;
+    color: var(--colorNegativoBG);
+    cursor: default;
+}
+
+.table .tr-Cancelada a:hover {
+    color: var(--colorNegativoBG);
+}
+
+.modal-publicaciones .table .tr-Cerrada td,
+.modal-publicaciones .table .tr-Cerrada a {
+    text-decoration: line-through;
+    color: var(--colorNegativoBG);
+    cursor: default;
+}
+
+.table .tr-Cerrada a:hover {
+    color: var(--colorNegativoBG);
+}
+
+.tooltipTable {
+    display: none;
+    position: absolute;
+    left: 20%;
+    transform: translateY(-50%);
+    background-color: var(--colorPrincipal);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: .8rem;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+td:hover .tooltipTable {
+    display: block;
+}
+
+.tr-Cancelada td:hover .tooltipTable,
+.tr-Cerrada td:hover .tooltipTable {
+    display: none;
+}
+
+.tooltipTable ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tooltipTable h6 {
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+/* OFERTA */
+
+.modal-subasta {
+    font-size: 1.4rem;
+}
+
+.modal-subasta h1 {
+    font-family: var(--fontTitulo);
+    font-size: 4rem;
+}
+
+.modal-subasta .btn-primary {
+    background-color: var(--colorBTN);
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.modal-subasta .btn-primary a {
+    color: var(--colorContraste);
+    text-decoration: none;
+}
+
+.modal-subasta .btn-primary:hover {
+    background-color: var(--colorBTNHover);
+}
+
+.modal-subasta hr {
+    border-top: 2px dashed var(--colorPrincipal);
+}
+
+.form-input::placeholder {
+    color: var(--colorPrincipal);
+}
