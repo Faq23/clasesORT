@@ -35,14 +35,9 @@ namespace Modelo
 
         #region Funciones Cliente
 
-        public void RealizarCompra(Venta venta)
-        {
-            Sistema.Instance.AsociarCompra(venta, this);
-        }
-
         public void CrearOferta(Subasta subasta, double monto)
         {
-            Sistema.Instance.CrearOferta(subasta, monto, this);
+            subasta.AgregarOferta(this, monto);
         }
 
         #endregion

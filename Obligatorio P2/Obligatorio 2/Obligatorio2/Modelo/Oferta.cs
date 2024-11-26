@@ -29,25 +29,35 @@ namespace Modelo
             Cliente = cliente;
             FechaPublicacion = DateTime.Now;
             Monto = monto;
-            ValidarMonto(Cliente.Saldo);
+            ValidarMonto();
         }
 
         // Metodos
 
         #region Validaciones
 
-        private void ValidarMonto(double saldoCliente)
+        private void ValidarMonto()
         {
             if (Monto < 1)
             {
                 throw new Exception("El Monto a ofertar debe ser mayor a 0");
             }
-            else if (Monto > saldoCliente)
+            else if (Monto > Cliente.Saldo)
             {
                 throw new Exception("No puedes ofertar un Monto mayor a tu Saldo disponible");
             }
         }
 
         #endregion
+
+        public override bool Equals(object? obj) // Reescribo esta funcion para poder definir cuando dos ofertas son iguales y asi poder utilizar la propiedad Remove de la lista _ofertas en Subasta.
+        {
+            if (obj is Oferta other)
+            {
+                return ID == other.ID;
+            }
+
+            return false;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<div class="container container-home d-flex p-5">
+﻿<div class="container container-home d-flex p-5 flex-md-row flex-sm-column-reverse">
     <div class="register__container home-modal home-modal__inaccesible p-5 register" onclick="window.location.href='@Url.Action("Register", "Home")'">
         <h1 class="text-center mb-5">Register</h1>
 
@@ -35,7 +35,7 @@
         <form method="post" class="form d-flex flex-column gap-3 justify-content-center align-content-center">
             <div class="mx-1 d-flex gap-1">
                 <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" /></svg></span>
-                <input class="form-control form-control-sm form-input" type="email" name="userEmail" placeholder="Email..." />
+                <input class="form-control form-control-sm form-input" type="email" name="userEmail" placeholder="Email..."  value="@ViewBag.userRegistered"/>
             </div>
             <div class="mx-1 d-flex gap-1">
                 <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-200v-80h800v80H80Zm46-242-52-30 34-60H40v-60h68l-34-58 52-30 34 58 34-58 52 30-34 58h68v60h-68l34 60-52 30-34-60-34 60Zm320 0-52-30 34-60h-68v-60h68l-34-58 52-30 34 58 34-58 52 30-34 58h68v60h-68l34 60-52 30-34-60-34 60Zm320 0-52-30 34-60h-68v-60h68l-34-58 52-30 34 58 34-58 52 30-34 58h68v60h-68l34 60-52 30-34-60-34 60Z" /></svg></span>

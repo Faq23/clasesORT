@@ -26,6 +26,11 @@ namespace Obligatorio2WebApp.Controllers
             {
                 context.Result = RedirectToAction("Index", "Home");
             }
+            else
+            {
+                ViewBag.msg = msg;
+                ViewBag.msgType = msgType;
+            }
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)
@@ -36,25 +41,47 @@ namespace Obligatorio2WebApp.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Publicacion");
+            if (HttpContext.Session.GetString("userRol") == "Administrador")
+            {
+                return RedirectToAction("PublicacionAdmin");
+            }
+            else
+            {
+                return RedirectToAction("Publicacion");
+            }
+            
         }
 
         public IActionResult Publicacion()
         {
+            if (HttpContext.Session.GetString("userRol") == "Administrador")
+            {
+                return RedirectToAction("Index", "Administrador");
+            }
+
             IEnumerable<Publicacion> listaPublicaciones = system.ObtenerPublicaciones();
 
-            ViewBag.msg = msg;
-            ViewBag.msgType = msgType;
+            if (listaPublicaciones.Count() == 0)
+            {
+                ViewBag.msg = "No existen publicaciones para mostrar.";
+            }
 
             return View(listaPublicaciones);
         }
 
         public IActionResult PublicacionAdmin()
         {
-            IEnumerable<Publicacion> listaPublicaciones = system.ObtenerPublicacionesPorFechaPubli();
+            if (HttpContext.Session.GetString("userRol") == "Cliente")
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
 
-            ViewBag.msg = msg;
-            ViewBag.msgType = msgType;
+            IEnumerable<Publicacion> listaPublicaciones = system.ObtenerPublicacionesPorFechaPubli(); // Ordeno todas las publicaciones y mediante las vistas filtro para que sean unicamente las subastas.
+
+            if (listaPublicaciones.Count() == 0)
+            {
+                ViewBag.msg = "No existen publicaciones para mostrar.";
+            }
 
             return View(listaPublicaciones);
         }

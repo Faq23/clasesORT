@@ -8,20 +8,27 @@ namespace Obligatorio2WebApp.Controllers
     {
 
         Sistema system = Sistema.Instance;
-        Cliente? clienteActivo = new Cliente();
+        Cliente? clienteActivo;
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             base.OnActionExecuting(context);
 
             int? clientID = HttpContext.Session.GetInt32("userID");
-            clienteActivo = system.ObtenerUsuarioPorID(clientID) as Cliente;
+            Usuario? usuario = system.ObtenerUsuarioPorID(clientID); // Obtengo el Usuario de Sistema para poder manipularlo luego
 
-            if (clienteActivo is null)
+            if (usuario is null) // Si no hay usuario lo redirijo hacia el login 
             {
                 context.Result = RedirectToAction("Index", "Home");
-            } else
+            }
+            else if (usuario is Administrador)
             {
+                context.Result = RedirectToAction("Index", "Administrador"); // Si el Usuario Logueado es de tipo administrador lo retorno a su página principal
+            }
+            else
+            {
+                clienteActivo = usuario as Cliente;
+
                 ViewBag.nombreCliente = clienteActivo.Nombre + " " + clienteActivo.Apellido;
                 ViewBag.emailCliente = clienteActivo.Email;
                 ViewBag.saldoCliente = clienteActivo.Saldo;
@@ -38,7 +45,6 @@ namespace Obligatorio2WebApp.Controllers
 
         public IActionResult Perfil()
         {
-
             return View();
         }
 
@@ -52,6 +58,7 @@ namespace Obligatorio2WebApp.Controllers
             else
             {
                 clienteActivo.Saldo += saldoAumento;
+                ViewBag.saldoCliente = clienteActivo.Saldo;
                 ViewBag.msg = "Su saldo fue agregado correctamente.";
                 ViewBag.msgType = "Success";
             }
@@ -61,7 +68,7 @@ namespace Obligatorio2WebApp.Controllers
 
         public IActionResult Publicacion()
         {
-            return RedirectToAction("Publicacion", "Publicacion");
+            return RedirectToAction("Publicacion", "Publicacion"); // Creo la Action en Cliente pero lo redirijo al Controller que manipula las Publicaciones
         }
 
         public IActionResult Compra(int ID)

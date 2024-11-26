@@ -68,15 +68,6 @@ namespace Modelo
             _usuarios.Add(ad1);
             _usuarios.Add(ad2);
 
-            Administrador devUser = new Administrador();
-            devUser.Nombre = "test";
-            devUser.Apellido = "test";
-            devUser.Email = "test@test.com";
-            devUser.Password = "test";
-
-            _usuarios.Add(devUser);
-
-
             // Creación de 50 artículos
             Articulo a1 = new Articulo("Laptop", "Electronica", 1200);
             Articulo a2 = new Articulo("Smartphone", "Electronica", 800);
@@ -412,18 +403,6 @@ namespace Modelo
             }
         }
 
-        public void CancelarPublicacion(Publicacion publicacion, Administrador administrador)
-        {
-            try
-            {
-                publicacion.CancelarPublicacion(administrador);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
         public List<Publicacion> ObtenerPublicacionesEntreFechas(DateTime fechaInicio, DateTime fechaFin) // Metodo creado para el Obligatorio 1
         {
             List<Publicacion> _publicaciones = new List<Publicacion>();
@@ -468,35 +447,6 @@ namespace Modelo
 
             return listaPublicacionesFiltrada;
         }
-
-        #endregion
-
-        #region Venta/Subasta
-
-        public void AsociarCompra(Venta publicacion, Cliente cliente)
-        {
-            try
-            {
-                publicacion.FinalizarPublicacion(cliente);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        public void ValidarSubasta(Subasta subasta, Administrador usuario)
-        {
-            try
-            {
-                subasta.FinalizarPublicacion(usuario);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
 
         #endregion
 
@@ -552,38 +502,6 @@ namespace Modelo
             }
 
             return _articulos;
-        }
-
-        #endregion
-
-        #region Ofertas
-
-        // Estos metodos fueron realizados para el Obligatorio 1 pero no fue necesario utilizarlos para esta segunda parte.
-
-        public void CrearOferta(Subasta subasta, double monto, Cliente cliente)
-        {
-            try
-            {
-                subasta.AgregarOferta(cliente, monto);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
-       
-        public void ModificarOfertaRel(Venta venta)
-        {
-            try
-            {
-                venta.ModificarOfertaRel();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
         }
 
         #endregion

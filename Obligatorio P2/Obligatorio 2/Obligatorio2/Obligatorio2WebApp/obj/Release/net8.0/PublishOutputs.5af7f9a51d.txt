@@ -1,0 +1,12 @@
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Modelo.exe
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Obligatorio2WebApp.exe
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Modelo.deps.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Modelo.runtimeconfig.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Obligatorio2WebApp.dll
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Obligatorio2WebApp.deps.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Obligatorio2WebApp.runtimeconfig.json
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Obligatorio2WebApp.pdb
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Modelo.dll
+C:\Users\Facundo\source\repos\Obligatorio2\Obligatorio2WebApp\obj\Release\net8.0\PubTmp\Out\Modelo.pdb

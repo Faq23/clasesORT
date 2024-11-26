@@ -15,10 +15,13 @@
                 </tr>
             </thead>
             <tbody>
+                @{int cantSubasta = 0;}
                 @foreach (Modelo.Publicacion p in Model)
                 {
                     if (p is Modelo.Subasta)
                     {
+                        cantSubasta++;
+
                         <tr class="tr-@p.Estado">
                             <td>
                                 @p.Nombre
@@ -38,6 +41,10 @@
                             <td>@Html.ActionLink("Cerrar", "Subasta", "Administrador", new { id = p.ID })</td>
                         </tr>
                     }
+                }
+                @if (cantSubasta == 0)
+                {
+                    ViewBag.msg = "No hay subastas para mostrar";
                 }
             </tbody>
         </table>

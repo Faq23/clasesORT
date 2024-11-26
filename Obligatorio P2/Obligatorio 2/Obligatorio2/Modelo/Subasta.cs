@@ -61,15 +61,7 @@ namespace Modelo
             while (_ofertas.Count > 0 && !found)
             {
 
-                foreach (Oferta o in _ofertas)
-                {
-
-                    if (o.Monto > mejorOferta.Monto)
-                    {
-                        mejorOferta = o;
-                    }
-
-                }
+                mejorOferta = ObtenerMejorOferta();
 
                 if (mejorOferta.Cliente.Saldo >= mejorOferta.Monto)
                 {
@@ -78,19 +70,20 @@ namespace Modelo
                     FechaFin = DateTime.Now;
                     Estado = Estado.Cerrada;
 
+                    Cliente.Saldo -= mejorOferta.Monto;
+
                     found = true;
                 }
                 else
                 {
                     _ofertas.Remove(mejorOferta);
-                    mejorOferta = new Oferta();
                 }
 
             }
 
             if (!found)
             {
-                throw new Exception("Ninguna oferta pudo ser aceptada, la subasta continuará activa.");
+                Estado = Estado.Cancelada;
             }
         }
 

@@ -22,6 +22,10 @@ namespace Obligatorio2WebApp.Controllers
             {
                 context.Result = RedirectToAction("Index", "Home");
             }
+            else if (usuarioActivo is Cliente)
+            {
+                context.Result = RedirectToAction("Index", "Cliente"); // Si el Usuario Logueado es de tipo cliente lo retorno a su página principal
+            }
             else
             {
                 ViewBag.nombreUsuario = usuarioActivo.Nombre + " " + usuarioActivo.Apellido;

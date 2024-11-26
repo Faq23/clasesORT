@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using Modelo;
@@ -13,7 +14,7 @@ namespace Obligatorio2WebApp.Controllers
 
         public IActionResult Index()
         {
-            HttpContext.Session.Clear();
+            HttpContext.Session.Clear(); // Limpio el Session cuando se accede al Home
             return RedirectToAction("Login"); // Por defecto el Index lo envia al Login
         }
 
@@ -21,11 +22,13 @@ namespace Obligatorio2WebApp.Controllers
         public IActionResult Login() // Permite a un usuario Loguearse
         {
             string? successRegister = HttpContext.Session.GetString("successRegister");
+            string? userRegistered = HttpContext.Session.GetString("userRegistered");
 
             if (!string.IsNullOrEmpty(successRegister))
             {
                 ViewBag.msgType = "Success";
                 ViewBag.msg = successRegister;
+                ViewBag.userRegistered = userRegistered;
 
                 HttpContext.Session.Remove("successRegister");
             }
@@ -47,7 +50,8 @@ namespace Obligatorio2WebApp.Controllers
                 {
                     system.RegistrarCliente(c);
                     HttpContext.Session.SetString("successRegister", "El usuario fue creado correctamente.");
-                    return RedirectToAction("Index", "Home");
+                    HttpContext.Session.SetString("userRegistered", c.Email);
+                    return RedirectToAction("Login", "Home");
                 }
                 catch(Exception ex)
                 {
