@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Obligatorio.Compartido\Obligatorio.Compartido.csproj" />
+    <ProjectReference Include="..\Obligatorio.LogicaAplicacion\Obligatorio.LogicaAplicacion.csproj" />
+    <ProjectReference Include="..\Obligatorio.LogicaInfraestructura\Obligatorio.LogicaInfraestructura.csproj" />
+  </ItemGroup>
+
+</Project>
