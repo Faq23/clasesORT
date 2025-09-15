@@ -1,0 +1,12 @@
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\bin\Debug\net8.0\Libreria.Infraestructura.deps.json
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\bin\Debug\net8.0\Libreria.Infraestructura.dll
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\bin\Debug\net8.0\Libreria.Infraestructura.pdb
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.AssemblyInfoInputs.cache
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.AssemblyInfo.cs
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.sourcelink.json
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.dll
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\refint\Libreria.Infraestructura.dll
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\Libreria.Infraestructura.pdb
+C:\Users\faqma\clasesORT\source\repos\Libreria\Libreria.Infraestructura\obj\Debug\net8.0\ref\Libreria.Infraestructura.dll
