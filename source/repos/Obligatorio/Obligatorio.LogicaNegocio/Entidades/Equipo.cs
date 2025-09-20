@@ -6,9 +6,9 @@ namespace Obligatorio.LogicaNegocio.Entidades
     public class Equipo : IEntity, IValidable
     {
         public int ID { get; set; }
-        public Nombre Nombre { get; set; }
+        public NombreEquipo Nombre { get; set; }
 
-        public Equipo(int id, Nombre nombre)
+        public Equipo(int id, NombreEquipo nombre)
         {
             ID = id;
             Nombre = nombre;

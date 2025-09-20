@@ -3,21 +3,19 @@ using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public record Nombre : IValidable
+    public record Email : IValidable
     {
         public string Value { get; private set; }
 
-        public Nombre(string value)
+        public Email(string value)
         {
             Value = value;
             Validar();
         }
+
         public void Validar()
         {
-            if (string.IsNullOrEmpty(Value))
-            {
-                throw new NombreException();
-            }
+            throw new EmailException();
         }
     }
 }

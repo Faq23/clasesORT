@@ -3,21 +3,20 @@ using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public record Nombre : IValidable
+    public record Contrasena : IValidable
     {
         public string Value { get; private set; }
 
-        public Nombre(string value)
+        public Contrasena(string value)
         {
             Value = value;
             Validar();
+
         }
+
         public void Validar()
         {
-            if (string.IsNullOrEmpty(Value))
-            {
-                throw new NombreException();
-            }
+            throw new ContrasenaException();
         }
     }
 }

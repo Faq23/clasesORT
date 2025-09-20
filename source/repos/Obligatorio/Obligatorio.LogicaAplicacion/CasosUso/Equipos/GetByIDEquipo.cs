@@ -5,18 +5,17 @@ using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
 namespace Obligatorio.LogicaAplicacion.CasosUso.Equipos
 {
-    public class AddEquipo : ICUAdd<EquipoDTOAlta>
+    public class GetByIDEquipo : ICUGetByID<EquipoDTOListado>
     {
         private IRepositorioEquipo _repo;
-
-        public AddEquipo(IRepositorioEquipo repo)
+        public GetByIDEquipo(IRepositorioEquipo repo)
         {
             _repo = repo;
         }
 
-        public void Execute(EquipoDTOAlta obj)
+        public EquipoDTOListado Execute(int id)
         {
-            _repo.Add(EquipoMapper.FromDTO(obj));
+            return EquipoMapper.ToDTO(_repo.GetByID(id));
         }
     }
 }

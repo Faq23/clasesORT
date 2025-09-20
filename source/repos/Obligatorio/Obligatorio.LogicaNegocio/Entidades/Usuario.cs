@@ -1,10 +1,6 @@
-﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
+﻿using Obligatorio.LogicaNegocio.Excepciones.Usuario;
+using Obligatorio.LogicaNegocio.InterfacesDominio;
 using Obligatorio.LogicaNegocio.vo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {
@@ -12,15 +8,16 @@ namespace Obligatorio.LogicaNegocio.Entidades
     {
         public int ID { get; set; }
         public Nombre Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public Apellido Apellido { get; set; }
+        public Contrasena Contrasena { get; set; }
+        public Email Email { get; set; }
 
-        public Usuario(Nombre nombre, string apellido, string password, string email)
+        public Usuario(int id, Nombre nombre, Apellido apellido, Contrasena contrasena, Email email)
         {
+            ID = id;
             Nombre = nombre;
             Apellido = apellido;
-            Password = password;
+            Contrasena = contrasena;
             Email = email;
 
             Validar();
@@ -28,7 +25,7 @@ namespace Obligatorio.LogicaNegocio.Entidades
 
         public void Validar()
         {
-            throw new NotImplementedException();
+            throw new UsuarioException();
         }
     }
 }
