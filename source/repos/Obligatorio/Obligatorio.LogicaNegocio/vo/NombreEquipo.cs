@@ -1,13 +1,13 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones.Usuario;
+﻿using Obligatorio.LogicaNegocio.Excepciones;
 using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public record Nombre : IValidable
+    public record NombreEquipo : IValidable
     {
         public string Value { get; private set; }
 
-        public Nombre(string value)
+        public NombreEquipo(string value)
         {
             Value = value;
             Validar();
@@ -16,7 +16,7 @@ namespace Obligatorio.LogicaNegocio.vo
         {
             if (string.IsNullOrEmpty(Value))
             {
-                throw new NombreException();
+                throw new NombreEquipoException();
             }
         }
     }

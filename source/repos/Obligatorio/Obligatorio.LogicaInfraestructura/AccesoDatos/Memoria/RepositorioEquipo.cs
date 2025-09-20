@@ -1,5 +1,5 @@
 ﻿using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.Excepciones;
+using Obligatorio.LogicaNegocio.Excepciones.Equipo;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
 namespace Obligatorio.LogicaInfraestructura.AccesoDatos.Memoria

@@ -2,6 +2,6 @@
 {
     public interface ICUGetByID<T>
     {
-        T Execute(int ID);
+        T Execute(int id);
     }
 }

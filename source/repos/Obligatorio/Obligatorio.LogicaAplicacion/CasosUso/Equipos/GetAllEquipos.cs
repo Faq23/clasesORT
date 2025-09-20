@@ -1,5 +1,5 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Equipos;
-using Obligatorio.LogicaNegocio.Entidades;
+using Obligatorio.LogicaAplicacion.Mapper;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
@@ -16,17 +16,7 @@ namespace Obligatorio.LogicaAplicacion.CasosUso.Equipos
 
         public IEnumerable<EquipoDTOListado> Execute()
         {
-            List<EquipoDTOListado> aux = new List<EquipoDTOListado>();
-
-            foreach (Equipo e in _repo.GetAll())
-            {
-                aux.Add(new EquipoDTOListado(
-                    ID: e.ID,
-                    Nombre: e.Nombre.Value
-                    ));
-            }
-
-            return aux;
+            return EquipoMapper.ToListDTO(_repo.GetAll()); ;
         }
     }
 }
