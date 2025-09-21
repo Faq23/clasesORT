@@ -16,7 +16,10 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
-            throw new ApellidoException();
+            if (string.IsNullOrEmpty(Value))
+            {
+                throw new ApellidoException();
+            }
         }
     }
 }

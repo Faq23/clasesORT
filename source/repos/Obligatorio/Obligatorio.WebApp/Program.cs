@@ -1,5 +1,7 @@
 using Obligatorio.LogicaAplicacion.CasosUso.Equipos;
+using Obligatorio.LogicaAplicacion.CasosUso.Usuarios;
 using Obligatorio.LogicaAplicacion.dtos.Equipos;
+using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaInfraestructura.AccesoDatos.Memoria;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
@@ -17,11 +19,20 @@ namespace Obligatorio.WebApp
 
             // Inyeccion de Repositorios
             builder.Services.AddScoped<IRepositorioEquipo, RepositorioEquipo>();
+            builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
             // Inyeccion de Caso de Uso
             // Equipo
             builder.Services.AddScoped<ICUAdd<EquipoDTOAlta>, AddEquipo>();
             builder.Services.AddScoped<ICUGetAll<EquipoDTOListado>, GetAllEquipos>();
+            builder.Services.AddScoped<ICUGetByID<EquipoDTOListado>, GetByIDEquipo>();
+
+            // Usuario
+            builder.Services.AddScoped<ICUAdd<UsuarioDTOAlta>, AddUsuario>();
+            builder.Services.AddScoped<ICUGetAll<UsuarioDTOListado>, GetAllUsuarios>();
+            builder.Services.AddScoped<ICUGetByID<UsuarioDTOListado>, GetByIDUsuario>();
+            builder.Services.AddScoped<ICUDelete<UsuarioDTOListado>, DeleteUsuario>();
+
 
             var app = builder.Build();
 

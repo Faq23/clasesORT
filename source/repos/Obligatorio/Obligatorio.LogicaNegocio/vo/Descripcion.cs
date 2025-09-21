@@ -1,24 +1,22 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones.Usuario;
+﻿using Obligatorio.LogicaNegocio.Excepciones.TipoGasto;
 using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public record Email : IValidable
+    public class Descripcion : IValidable
     {
         public string Value { get; private set; }
 
-        public Email(string value)
+        public Descripcion(string value)
         {
             Value = value;
+
             Validar();
         }
 
         public void Validar()
         {
-            if (string.IsNullOrEmpty(Value))
-            {
-                throw new EmailException();
-            }
+            throw new DescripcionException();
         }
     }
 }

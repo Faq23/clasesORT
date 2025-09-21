@@ -25,7 +25,10 @@ namespace Obligatorio.LogicaNegocio.Entidades
 
         public void Validar()
         {
-            throw new UsuarioException();
+            if (false)
+            {
+                throw new UsuarioException();
+            }
         }
     }
 }
