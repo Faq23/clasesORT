@@ -36,7 +36,7 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.Memoria
 
         public Usuario GetByID(int ID)
         {
-            return _usuarios[ID];
+            throw new NotImplementedException();
         }
     }
 }

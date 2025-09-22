@@ -20,6 +20,11 @@ namespace Obligatorio.LogicaNegocio.vo
             {
                 throw new ContrasenaException();
             }
+
+            if (Value.Length < 8)
+            {
+                throw new ContrasenaException();
+            }
         }
     }
 }

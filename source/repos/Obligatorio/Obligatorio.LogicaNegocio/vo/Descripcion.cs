@@ -1,5 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones.TipoGasto;
-using Obligatorio.LogicaNegocio.InterfacesDominio;
+﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
@@ -16,7 +15,6 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
-            throw new DescripcionException();
         }
     }
 }

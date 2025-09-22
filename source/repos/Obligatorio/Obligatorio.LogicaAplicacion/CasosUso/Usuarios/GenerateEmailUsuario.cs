@@ -18,7 +18,8 @@ namespace Obligatorio.LogicaAplicacion.CasosUso.Usuarios
 
         public string Execute(string firstPart, string lastPart)
         {
-            string emailBase = Normalizar(firstPart.Substring(0, 3)) + Normalizar(lastPart.Substring(0, 3));
+            string emailBase = Normalizar(firstPart.Substring(0, Math.Min(3, firstPart.Length))) +
+                               Normalizar(lastPart.Substring(0, Math.Min(3, lastPart.Length))); // Con Math.Min() Tengo en cuenta los apellidos con menos de 3 letras.
             string emailDomain = "@laempresa.com";
 
             if (ValidarExistente(emailBase + emailDomain))

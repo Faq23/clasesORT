@@ -1,5 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones.Usuario;
-using Obligatorio.LogicaNegocio.InterfacesDominio;
+﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
 using Obligatorio.LogicaNegocio.vo;
 
 namespace Obligatorio.LogicaNegocio.Entidades
@@ -11,24 +10,23 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public Apellido Apellido { get; set; }
         public Contrasena Contrasena { get; set; }
         public Email Email { get; set; }
+        public int IDEquipo { get; set; } // FK Equipo
+        public Equipo Equipo { get; set; }
 
-        public Usuario(int id, Nombre nombre, Apellido apellido, Contrasena contrasena, Email email)
+        protected Usuario() { }
+
+        public Usuario(Nombre nombre, Apellido apellido, Contrasena contrasena, Email email, int idEquipo, Equipo equipo)
         {
-            ID = id;
             Nombre = nombre;
             Apellido = apellido;
             Contrasena = contrasena;
             Email = email;
+            IDEquipo = idEquipo;
+            Equipo = equipo;
 
             Validar();
         }
 
-        public void Validar()
-        {
-            if (false)
-            {
-                throw new UsuarioException();
-            }
-        }
+        public void Validar() { }
     }
 }

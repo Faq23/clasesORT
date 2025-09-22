@@ -2,10 +2,11 @@
 using Obligatorio.LogicaAplicacion.dtos.Equipos;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
 
-namespace Obligatorio.WebApp.Controllers
+namespace Obligatorio.WebApp.Controllers.Equipos
 {
     public class EquipoController : Controller
     {
+
         private ICUAdd<EquipoDTOAlta> _add;
         private ICUGetAll<EquipoDTOListado> _getAll;
 
@@ -28,7 +29,7 @@ namespace Obligatorio.WebApp.Controllers
 
         public void Create()
         {
-            _add.Execute(new EquipoDTOAlta(1, "EquipoA"));
+            _add.Execute(new EquipoDTOAlta("EquipoA"));
         }
     }
 }

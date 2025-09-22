@@ -4,7 +4,8 @@ namespace Obligatorio.LogicaNegocio.Entidades
 {
     public class Administrador : Usuario
     {
-        public Administrador(int id, Nombre nombre, Apellido apellido, Contrasena contrasena, Email email) : base(id, nombre, apellido, contrasena, email)
+        protected Administrador() : base() { }
+        public Administrador(Nombre nombre, Apellido apellido, Contrasena contrasena, Email email, int idEquipo, Equipo equipo) : base(nombre, apellido, contrasena, email, idEquipo, equipo)
         {
         }
     }

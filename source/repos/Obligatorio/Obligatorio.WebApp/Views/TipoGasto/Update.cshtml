@@ -1,0 +1,23 @@
+﻿@using Obligatorio.LogicaAplicacion.dtos.TiposGasto
+@model TipoGastoDTOListado
+
+<div>
+    <h1>Modificar </h1>
+
+    <form asp-action="Update" asp-controller="TipoGasto" method="post">
+        <div>
+            <input type="hidden" name="idTipoGasto" value="@Model.ID" />
+        </div>
+
+        <div>
+            <input type="text" name="newNombre" placeholder="Nombre..." value="@Model.Nombre" />
+        </div>
+        <div>
+            <input type="text" name="newDescripcion" placeholder="Descripcion..." value="@Model.Descripcion" />
+        </div>
+
+        <div>
+            <input type="submit" value="Modificar" />
+        </div>
+    </form>
+</div>
