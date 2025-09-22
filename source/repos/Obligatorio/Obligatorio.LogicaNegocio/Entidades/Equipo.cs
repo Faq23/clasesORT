@@ -8,10 +8,13 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public int ID { get; set; }
         public NombreEquipo Nombre { get; set; }
 
-        public Equipo(int id, NombreEquipo nombre)
+        public IList<Usuario> Usuarios { get; set; } = new List<Usuario>();
+
+        protected Equipo() { }
+        public Equipo(NombreEquipo nombre)
         {
-            ID = id;
             Nombre = nombre;
+
             Validar();
         }
 

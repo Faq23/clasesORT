@@ -9,8 +9,7 @@ namespace Obligatorio.LogicaAplicacion.Mapper
         public static Equipo FromDTO(EquipoDTOAlta equipoDTO)
         {
             return new Equipo(
-                equipoDTO.ID,
-                new NombreEquipo(equipoDTO.Nombre)); ;
+                new NombreEquipo(equipoDTO.Nombre));
         }
 
         public static EquipoDTOListado ToDTO(Equipo equipo)

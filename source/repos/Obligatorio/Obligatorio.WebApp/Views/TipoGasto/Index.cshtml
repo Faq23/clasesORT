@@ -1,0 +1,49 @@
+﻿@using Obligatorio.LogicaAplicacion.dtos.TiposGasto
+@model IEnumerable<TipoGastoDTOListado>
+
+<div>
+    <h1>Agregar nuevo</h1>
+
+    <form asp-action="Create" asp-controller="TipoGasto" method="post">
+        <div>
+            <input type="text" name="nombreTipoGasto" placeholder="Nombre..." value="" />
+        </div>
+        <div>
+            <input type="text" name="descripcionTipoGasto" placeholder="Descripcion..." />
+        </div>
+
+        <div>
+            <input type="submit" value="Agregar" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <h1 class="text-center m-4">Tipos de Pago</h1>
+
+    <table class="table table-light table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TipoGastoDTOListado item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Descripcion</td>
+                    <td>
+                        <form asp-action="Delete" asp-controller="TipoGasto" method="post">
+                            <input type="hidden" name="ID" value="@item.ID" />
+                            <button type="submit">Borrar</button>
+                        </form>
+                        @Html.ActionLink("Modificar", "LoadUpdate", "TipoGasto", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

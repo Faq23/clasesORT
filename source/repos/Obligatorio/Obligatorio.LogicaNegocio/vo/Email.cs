@@ -15,7 +15,10 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
-            throw new EmailException();
+            if (string.IsNullOrEmpty(Value))
+            {
+                throw new EmailException();
+            }
         }
     }
 }

@@ -8,13 +8,44 @@ namespace Obligatorio.LogicaAplicacion.Mapper
     {
         public static Usuario FromDTO(UsuarioDTOAlta usuarioDTO)
         {
-            return new Usuario(
-                usuarioDTO.ID,
-                new Nombre(usuarioDTO.Nombre),
-                new Apellido(usuarioDTO.Apellido),
-                new Contrasena(usuarioDTO.Contrasena),
-                new Email(usuarioDTO.Email)
-                );
+            switch (usuarioDTO.Tipo)
+            {
+                case "Administrador":
+                    return new Administrador(
+                        new Nombre(usuarioDTO.Nombre),
+                        new Apellido(usuarioDTO.Apellido),
+                        new Contrasena(usuarioDTO.Contrasena),
+                        new Email(usuarioDTO.Email),
+                        usuarioDTO.IDEquipo,
+                        usuarioDTO.Equipo);
+
+                case "Gerente":
+                    return new Gerente(
+                        new Nombre(usuarioDTO.Nombre),
+                        new Apellido(usuarioDTO.Apellido),
+                        new Contrasena(usuarioDTO.Contrasena),
+                        new Email(usuarioDTO.Email),
+                        usuarioDTO.IDEquipo,
+                        usuarioDTO.Equipo);
+
+                case "Empleado":
+                    return new Empleado(
+                        new Nombre(usuarioDTO.Nombre),
+                        new Apellido(usuarioDTO.Apellido),
+                        new Contrasena(usuarioDTO.Contrasena),
+                        new Email(usuarioDTO.Email),
+                        usuarioDTO.IDEquipo,
+                        usuarioDTO.Equipo);
+
+                default:
+                    return new Usuario(
+                        new Nombre(usuarioDTO.Nombre),
+                        new Apellido(usuarioDTO.Apellido),
+                        new Contrasena(usuarioDTO.Contrasena),
+                        new Email(usuarioDTO.Email),
+                        usuarioDTO.IDEquipo,
+                        usuarioDTO.Equipo);
+            }
         }
 
         public static UsuarioDTOListado ToDTO(Usuario usuario)
@@ -24,7 +55,10 @@ namespace Obligatorio.LogicaAplicacion.Mapper
                 Nombre: usuario.Nombre.Value,
                 Apellido: usuario.Apellido.Value,
                 Contrasena: usuario.Contrasena.Value,
-                Email: usuario.Email.Value
+                Email: usuario.Email.Value,
+                IDEquipo: usuario.IDEquipo,
+                Equipo: usuario.Equipo,
+                Tipo: usuario.GetType().Name
                 );
         }
 

@@ -16,7 +16,15 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
-            throw new ContrasenaException();
+            if (string.IsNullOrEmpty(Value))
+            {
+                throw new ContrasenaException();
+            }
+
+            if (Value.Length < 8)
+            {
+                throw new ContrasenaException();
+            }
         }
     }
 }

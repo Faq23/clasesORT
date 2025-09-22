@@ -1,6 +1,6 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Obligatorio.WebApp.Models;
+using System.Diagnostics;
 
 namespace Obligatorio.WebApp.Controllers
 {
@@ -15,12 +15,8 @@ namespace Obligatorio.WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuario");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

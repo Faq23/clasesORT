@@ -1,4 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones;
+﻿using Obligatorio.LogicaNegocio.Excepciones.Equipo;
 using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
