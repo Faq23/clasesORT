@@ -1,6 +1,9 @@
-﻿namespace Obligatorio.LogicaNegocio.Entidades
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Obligatorio.LogicaNegocio.Entidades
 {
-    public class MetodoPago
+    [Owned]
+    public abstract class MetodoPago
     {
         public MetodoPago() { }
     }

@@ -32,7 +32,8 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
 
         public IEnumerable<Usuario> GetAll()
         {
-            return _context.Usuarios;
+            return _context.Usuarios
+                .ToList();
         }
 
         public Usuario GetByID(int ID)

@@ -10,8 +10,13 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public Apellido Apellido { get; set; }
         public Contrasena Contrasena { get; set; }
         public Email Email { get; set; }
+
+        // Relaciones
+
         public int IDEquipo { get; set; } // FK Equipo
         public Equipo Equipo { get; set; }
+
+        public IList<Pago> Pagos { get; set; }
 
         protected Usuario() { }
 
@@ -23,6 +28,7 @@ namespace Obligatorio.LogicaNegocio.Entidades
             Email = email;
             IDEquipo = idEquipo;
             Equipo = equipo;
+            Pagos = new List<Pago>();
 
             Validar();
         }

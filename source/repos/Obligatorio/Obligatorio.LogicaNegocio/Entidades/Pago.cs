@@ -7,14 +7,22 @@ namespace Obligatorio.LogicaNegocio.Entidades
     public class Pago : IEntity, IValidable
     {
         public int ID { get; set; }
-        public MetodoPago MetodoPago { get; set; }
-        public TipoGasto TipoGastoAsociado { get; set; }
-        public Usuario Usuario { get; set; }
         public DescripcionPago DescripcionPago { get; set; }
 
-        public Pago(int id, MetodoPago metodoPago, TipoGasto tipoGastoAsociado, Usuario usuario, DescripcionPago descripcionPago)
+        // Relaciones
+
+        public int IDUsuario { get; set; }
+        public Usuario Usuario { get; set; }
+
+        public MetodoPago MetodoPago { get; set; }
+
+        public int IDTipoGasto { get; set; }
+        public TipoGasto TipoGastoAsociado { get; set; }
+
+        public Pago() { }
+
+        public Pago(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago)
         {
-            ID = id;
             MetodoPago = metodoPago;
             TipoGastoAsociado = tipoGastoAsociado;
             Usuario = usuario;
@@ -27,5 +35,6 @@ namespace Obligatorio.LogicaNegocio.Entidades
         {
             throw new PagoException();
         }
+
     }
 }

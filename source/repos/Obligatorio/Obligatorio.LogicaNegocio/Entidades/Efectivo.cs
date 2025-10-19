@@ -2,6 +2,11 @@
 {
     public class Efectivo : MetodoPago
     {
-        public Efectivo() { }
+        public Efectivo() : base() { }
+
+        public override string ToString()
+        {
+            return "Efectivo";
+        }
     }
 }

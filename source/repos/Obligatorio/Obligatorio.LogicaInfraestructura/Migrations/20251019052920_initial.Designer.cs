@@ -11,7 +11,7 @@ using Obligatorio.LogicaInfraestructura.AccesoDatos.EF;
 namespace Obligatorio.LogicaInfraestructura.Migrations
 {
     [DbContext(typeof(ObligatorioContext))]
-    [Migration("20250922072216_initial")]
+    [Migration("20251019052920_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -35,6 +35,42 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Equipos");
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Pago", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("IDTipoGasto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IDUsuario")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("IDTipoGasto");
+
+                    b.HasIndex("IDUsuario");
+
+                    b.ToTable("Pagos");
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.TipoGasto", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TiposGasto");
                 });
 
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Usuario", b =>
@@ -106,6 +142,112 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                         });
 
                     b.Navigation("Nombre")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Pago", b =>
+                {
+                    b.HasOne("Obligatorio.LogicaNegocio.Entidades.TipoGasto", "TipoGastoAsociado")
+                        .WithMany("Pagos")
+                        .HasForeignKey("IDTipoGasto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Obligatorio.LogicaNegocio.Entidades.Usuario", "Usuario")
+                        .WithMany("Pagos")
+                        .HasForeignKey("IDUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("Obligatorio.LogicaNegocio.Entidades.MetodoPago", "MetodoPago", b1 =>
+                        {
+                            b1.Property<int>("PagoID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("TipoMetodoPago")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("MetodoPago");
+
+                            b1.HasKey("PagoID");
+
+                            b1.ToTable("Pagos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PagoID");
+                        });
+
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.DescripcionPago", "DescripcionPago", b1 =>
+                        {
+                            b1.Property<int>("PagoID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Descripcion");
+
+                            b1.HasKey("PagoID");
+
+                            b1.ToTable("Pagos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PagoID");
+                        });
+
+                    b.Navigation("DescripcionPago")
+                        .IsRequired();
+
+                    b.Navigation("MetodoPago")
+                        .IsRequired();
+
+                    b.Navigation("TipoGastoAsociado");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.TipoGasto", b =>
+                {
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Descripcion", "Descripcion", b1 =>
+                        {
+                            b1.Property<int>("TipoGastoID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Descripcion");
+
+                            b1.HasKey("TipoGastoID");
+
+                            b1.ToTable("TiposGasto");
+
+                            b1.WithOwner()
+                                .HasForeignKey("TipoGastoID");
+                        });
+
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreGasto", "NombreGasto", b1 =>
+                        {
+                            b1.Property<int>("TipoGastoID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Nombre");
+
+                            b1.HasKey("TipoGastoID");
+
+                            b1.ToTable("TiposGasto");
+
+                            b1.WithOwner()
+                                .HasForeignKey("TipoGastoID");
+                        });
+
+                    b.Navigation("Descripcion")
+                        .IsRequired();
+
+                    b.Navigation("NombreGasto")
                         .IsRequired();
                 });
 
@@ -207,6 +349,16 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Equipo", b =>
                 {
                     b.Navigation("Usuarios");
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.TipoGasto", b =>
+                {
+                    b.Navigation("Pagos");
+                });
+
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Usuario", b =>
+                {
+                    b.Navigation("Pagos");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,7 +7,9 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
 
-        public PagoRecurrente(int id, MetodoPago metodoPago, TipoGasto tipoGastoAsociado, Usuario usuario, DescripcionPago descripcionPago, DateTime fechaInicio, DateTime fechaFin) : base(id, metodoPago, tipoGastoAsociado, usuario, descripcionPago)
+        public PagoRecurrente() : base() { }
+        public PagoRecurrente(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago, DateTime fechaInicio, DateTime fechaFin)
+            : base(metodoPago, IDTipoGasto, tipoGastoAsociado, IDUsuario, usuario, descripcionPago)
         {
             FechaInicio = fechaInicio;
             FechaFin = fechaFin;

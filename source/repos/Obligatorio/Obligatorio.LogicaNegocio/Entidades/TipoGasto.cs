@@ -9,6 +9,10 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public NombreGasto NombreGasto { get; set; }
         public Descripcion Descripcion { get; set; }
 
+        // Relaciones
+
+        public IList<Pago> Pagos { get; set; }
+
         protected TipoGasto() { }
 
         public TipoGasto(NombreGasto nombreGasto, Descripcion descripcion)

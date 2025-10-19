@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Obligatorio.LogicaAplicacion.CasosUso.Equipos;
+using Obligatorio.LogicaAplicacion.CasosUso.Pagos;
 using Obligatorio.LogicaAplicacion.CasosUso.TiposGasto;
 using Obligatorio.LogicaAplicacion.CasosUso.Usuarios;
 using Obligatorio.LogicaAplicacion.dtos.Equipos;
+using Obligatorio.LogicaAplicacion.dtos.Pagos;
 using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaInfraestructura.AccesoDatos.EF;
@@ -21,8 +23,13 @@ namespace Obligatorio.WebApp
             builder.Services.AddControllersWithViews();
 
             // Conexión BDD
+            IConfiguration configuracion = new ConfigurationBuilder()
+                .AddJsonFile("appSettings.json").Build();
+
+            string cadenaConexion = configuracion.GetConnectionString("Default");
+
             builder.Services.AddDbContext<ObligatorioContext>(options =>
-                options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Obligatorio339429;Trusted_Connection=True;"));
+                options.UseSqlServer(cadenaConexion));
 
             // Session
             builder.Services.AddSession();
@@ -31,6 +38,8 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<IRepositorioEquipo, RepositorioEquipo>();
             builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
             builder.Services.AddScoped<IRepositorioTipoGasto, RepositorioTipoGasto>();
+            builder.Services.AddScoped<IRepositorioPagoRecurrente, RepositorioPagoRecurrente>();
+            builder.Services.AddScoped<IRepositorioPagoUnico, RepositorioPagoUnico>();
 
             // Inyeccion de Caso de Uso
             // Equipo
@@ -53,7 +62,29 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<ICUDelete<TipoGastoDTOListado>, DeleteTipoGasto>();
             builder.Services.AddScoped<ICUUpdate<TipoGastoDTOAlta>, UpdateTipoGasto>();
 
+            // Pago
+
+            builder.Services.AddScoped<ICUAdd<PagoRecurrenteDTOAlta>, AddPagoRecurrente>();
+            builder.Services.AddScoped<ICUGetAll<PagoRecurrenteDTOListado>, GetAllPagosRecurrentes>();
+            builder.Services.AddScoped<ICUGetByID<PagoRecurrenteDTOListado>, GetByIDPagoRecurrente>();
+
+            builder.Services.AddScoped<ICUAdd<PagoUnicoDTOAlta>, AddPagoUnico>();
+            builder.Services.AddScoped<ICUGetAll<PagoUnicoDTOListado>, GetAllPagosUnicos>();
+            builder.Services.AddScoped<ICUGetByID<PagoUnicoDTOListado>, GetByIDPagoUnico>();
+
+            // Precarga de datos
+            builder.Services.AddScoped<SeedData>();
+
             var app = builder.Build();
+
+            if (app.Environment.IsDevelopment())
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetRequiredService<SeedData>();
+                    seeder.Run();
+                }
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

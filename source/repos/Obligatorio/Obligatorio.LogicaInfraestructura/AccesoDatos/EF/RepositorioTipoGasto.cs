@@ -33,7 +33,8 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
 
         public IEnumerable<TipoGasto> GetAll()
         {
-            return _context.TiposGasto;
+            return _context.TiposGasto
+                .ToList();
         }
 
         public TipoGasto GetByID(int ID)
