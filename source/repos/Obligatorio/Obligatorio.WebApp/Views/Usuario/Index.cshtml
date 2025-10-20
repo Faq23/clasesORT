@@ -1,0 +1,102 @@
+﻿@using Obligatorio.LogicaAplicacion.dtos.Equipos
+@using Obligatorio.LogicaAplicacion.dtos.Usuarios
+@model IEnumerable<UsuarioDTOListado>
+@{
+    IEnumerable<EquipoDTOListado> equipos = ViewData["listaEquipos"] as IEnumerable<EquipoDTOListado>;
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold text-primary">Gestión de Usuarios</h1>
+        <p class="text-muted">Agregá nuevos usuarios y consultá la lista existente.</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Agregar nuevo usuario</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" asp-controller="Usuario" method="post" class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre..." required />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Apellido</label>
+                    <input type="text" name="apellido" class="form-control" placeholder="Apellido..." required />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Contraseña</label>
+                    <input type="password" name="contrasena" class="form-control" placeholder="Contraseña..." required />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Equipo</label>
+                    <select name="idEquipo" class="form-select" required>
+                        <option selected disabled value="">-- Seleccione una opción --</option>
+                        @foreach (EquipoDTOListado item in equipos)
+                        {
+                            <option value="@item.ID">@item.Nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Tipo de Usuario</label>
+                    <select name="tipo" class="form-select" required>
+                        <option selected disabled value="">-- Seleccione una opción --</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Empleado">Empleado</option>
+                    </select>
+                </div>
+                <div class="col-12 text-end mt-3">
+                    <button type="submit" class="btn btn-success px-4">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tabla de Usuarios -->
+    <div class="text-center mb-3">
+        <h2 class="fw-bold text-primary">Listado de Usuarios</h2>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered text-center align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Equipo</th>
+                        <th>Tipo Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (UsuarioDTOListado item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Apellido</td>
+                            <td>@item.Email</td>
+                            <td>@item.Equipo.Nombre</td>
+                            <td>@item.Tipo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Mensajes -->
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.msg) || TempData["msg"] != null)
+        {
+            var tipo = string.IsNullOrEmpty(ViewBag.msgType) && TempData["msgType"] == null ? "alert-danger" : "alert-success";
+            <div id="alertModal" class="alert @tipo alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index: 1050;">
+                <p class="m-0">@ViewBag.msg@TempData["msg"]</p>
+            </div>
+        }
+    }
+</div>

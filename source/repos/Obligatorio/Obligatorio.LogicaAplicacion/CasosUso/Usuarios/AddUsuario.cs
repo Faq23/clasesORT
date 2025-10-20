@@ -8,15 +8,22 @@ namespace Obligatorio.LogicaAplicacion.CasosUso.Usuarios
     public class AddUsuario : ICUAdd<UsuarioDTOAlta>
     {
         private IRepositorioUsuario _repo;
+        private IRepositorioEquipo _repoEquipo;
 
-        public AddUsuario(IRepositorioUsuario repo)
+        public AddUsuario(
+            IRepositorioUsuario repo,
+            IRepositorioEquipo repoEquipo)
         {
             _repo = repo;
+            _repoEquipo = repoEquipo;
         }
 
         public void Execute(UsuarioDTOAlta obj)
         {
-            _repo.Add(UsuarioMapper.FromDTO(obj));
+            _repo.Add(UsuarioMapper.FromDTO(
+                obj,
+                _repoEquipo.GetByID(obj.IDEquipo)
+                ));
         }
     }
 }

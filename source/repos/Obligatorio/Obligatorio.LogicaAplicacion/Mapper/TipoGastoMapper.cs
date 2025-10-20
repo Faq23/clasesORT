@@ -1,6 +1,6 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.TipoGasto;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {
@@ -13,6 +13,15 @@ namespace Obligatorio.LogicaAplicacion.Mapper
                 new Descripcion(tipoGastoDTO.Descripcion)
                 );
         }
+
+        public static TipoGasto existantFromDTO(TipoGastoDTOAlta tipoGastoDTO)
+        {
+            return new TipoGasto(
+                new NombreGasto(tipoGastoDTO.Nombre),
+                new Descripcion(tipoGastoDTO.Descripcion)
+                );
+        }
+
 
         public static TipoGastoDTOListado ToDTO(TipoGasto tipoGasto)
         {

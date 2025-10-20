@@ -1,51 +1,25 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.Factories;
+using Obligatorio.LogicaNegocio.vo.Usuario;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {
     public class UsuarioMapper
     {
-        public static Usuario FromDTO(UsuarioDTOAlta usuarioDTO)
+        public static Usuario FromDTO(UsuarioDTOAlta usuarioDTO, Equipo equipo)
         {
-            switch (usuarioDTO.Tipo)
-            {
-                case "Administrador":
-                    return new Administrador(
-                        new Nombre(usuarioDTO.Nombre),
-                        new Apellido(usuarioDTO.Apellido),
-                        new Contrasena(usuarioDTO.Contrasena),
-                        new Email(usuarioDTO.Email),
-                        usuarioDTO.IDEquipo,
-                        usuarioDTO.Equipo);
+            UsuarioFactory uf = new UsuarioFactory();
+            Usuario newUser = uf.Crear(usuarioDTO.Tipo);
 
-                case "Gerente":
-                    return new Gerente(
-                        new Nombre(usuarioDTO.Nombre),
-                        new Apellido(usuarioDTO.Apellido),
-                        new Contrasena(usuarioDTO.Contrasena),
-                        new Email(usuarioDTO.Email),
-                        usuarioDTO.IDEquipo,
-                        usuarioDTO.Equipo);
+            newUser.Nombre = new Nombre(usuarioDTO.Nombre);
+            newUser.Apellido = new Apellido(usuarioDTO.Apellido);
+            newUser.Contrasena = new Contrasena(usuarioDTO.Contrasena);
+            newUser.Email = new Email(usuarioDTO.Email);
+            newUser.IDEquipo = usuarioDTO.IDEquipo;
+            newUser.Equipo = equipo;
 
-                case "Empleado":
-                    return new Empleado(
-                        new Nombre(usuarioDTO.Nombre),
-                        new Apellido(usuarioDTO.Apellido),
-                        new Contrasena(usuarioDTO.Contrasena),
-                        new Email(usuarioDTO.Email),
-                        usuarioDTO.IDEquipo,
-                        usuarioDTO.Equipo);
-
-                default:
-                    return new Usuario(
-                        new Nombre(usuarioDTO.Nombre),
-                        new Apellido(usuarioDTO.Apellido),
-                        new Contrasena(usuarioDTO.Contrasena),
-                        new Email(usuarioDTO.Email),
-                        usuarioDTO.IDEquipo,
-                        usuarioDTO.Equipo);
-            }
+            return newUser;
         }
 
         public static UsuarioDTOListado ToDTO(Usuario usuario)
@@ -57,7 +31,7 @@ namespace Obligatorio.LogicaAplicacion.Mapper
                 Contrasena: usuario.Contrasena.Value,
                 Email: usuario.Email.Value,
                 IDEquipo: usuario.IDEquipo,
-                Equipo: usuario.Equipo,
+                Equipo: EquipoMapper.ToDTO(usuario.Equipo),
                 Tipo: usuario.GetType().Name
                 );
         }
@@ -69,6 +43,33 @@ namespace Obligatorio.LogicaAplicacion.Mapper
             foreach (Usuario item in usuarios)
             {
                 aux.Add(ToDTO(item));
+            }
+
+            return aux;
+        }
+
+        public static UsuarioDTOListadoConMonto ToDTO(Usuario usuario, int monto)
+        {
+            return new UsuarioDTOListadoConMonto(
+                ID: usuario.ID,
+                Nombre: usuario.Nombre.Value,
+                Apellido: usuario.Apellido.Value,
+                Contrasena: usuario.Contrasena.Value,
+                Email: usuario.Email.Value,
+                IDEquipo: usuario.IDEquipo,
+                Equipo: EquipoMapper.ToDTO(usuario.Equipo),
+                Tipo: usuario.GetType().Name,
+                Monto: monto
+                );
+        }
+
+        public static IEnumerable<UsuarioDTOListadoConMonto> ToListDTOFromAnother(IEnumerable<Pago> pagos)
+        {
+            List<UsuarioDTOListadoConMonto> aux = new List<UsuarioDTOListadoConMonto>();
+
+            foreach (Pago item in pagos)
+            {
+                aux.Add(ToDTO(item.Usuario, item.MontoPago.Value));
             }
 
             return aux;

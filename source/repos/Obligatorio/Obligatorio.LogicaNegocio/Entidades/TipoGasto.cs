@@ -1,5 +1,5 @@
 ﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.TipoGasto;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {
@@ -8,6 +8,10 @@ namespace Obligatorio.LogicaNegocio.Entidades
         public int ID { get; set; }
         public NombreGasto NombreGasto { get; set; }
         public Descripcion Descripcion { get; set; }
+
+        // Relaciones
+
+        public IList<Pago> Pagos { get; set; }
 
         protected TipoGasto() { }
 

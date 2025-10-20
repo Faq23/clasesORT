@@ -17,10 +17,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Obligatorio.Compartido\Obligatorio.Compartido.csproj" />
     <ProjectReference Include="..\Obligatorio.LogicaAplicacion\Obligatorio.LogicaAplicacion.csproj" />
     <ProjectReference Include="..\Obligatorio.LogicaInfraestructura\Obligatorio.LogicaInfraestructura.csproj" />
   </ItemGroup>

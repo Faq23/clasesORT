@@ -2,6 +2,11 @@
 {
     public class Credito : MetodoPago
     {
-        public Credito() { }
+        public Credito() : base() { }
+
+        public override string ToString()
+        {
+            return "Credito";
+        }
     }
 }

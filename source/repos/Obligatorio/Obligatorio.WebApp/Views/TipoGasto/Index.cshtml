@@ -1,49 +1,77 @@
 ﻿@using Obligatorio.LogicaAplicacion.dtos.TiposGasto
 @model IEnumerable<TipoGastoDTOListado>
 
-<div>
-    <h1>Agregar nuevo</h1>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold text-primary">Gestión de Tipos de Gasto</h1>
+        <p class="text-muted">Agregá, modificá o eliminá tipos de gasto desde esta sección.</p>
+    </div>
 
-    <form asp-action="Create" asp-controller="TipoGasto" method="post">
-        <div>
-            <input type="text" name="nombreTipoGasto" placeholder="Nombre..." value="" />
+    <!-- Formulario -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Agregar nuevo tipo de gasto</h5>
         </div>
-        <div>
-            <input type="text" name="descripcionTipoGasto" placeholder="Descripcion..." />
+        <div class="card-body">
+            <form asp-action="Create" asp-controller="TipoGasto" method="post" class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nombre</label>
+                    <input type="text" name="nombreTipoGasto" class="form-control" placeholder="Nombre..." required />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Descripción</label>
+                    <input type="text" name="descripcionTipoGasto" class="form-control" placeholder="Descripción..." required />
+                </div>
+                <div class="col-12 text-end mt-3">
+                    <button type="submit" class="btn btn-success px-4">Agregar</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <div>
-            <input type="submit" value="Agregar" />
+    <!-- Tabla -->
+    <div class="text-center mb-3">
+        <h2 class="fw-bold text-primary">Listado de Tipos de Gasto</h2>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered text-center align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (TipoGastoDTOListado item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Descripcion</td>
+                            <td class="d-flex justify-content-center gap-2">
+                                <form asp-action="Delete" asp-controller="TipoGasto" method="post" class="m-0">
+                                    <input type="hidden" name="ID" value="@item.ID" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
+                                </form>
+                                @Html.ActionLink("Modificar", "LoadUpdate", "TipoGasto", new { id = item.ID }, new { @class = "btn btn-outline-primary btn-sm" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-    </form>
-</div>
+    </div>
 
-<div>
-    <h1 class="text-center m-4">Tipos de Pago</h1>
-
-    <table class="table table-light table-bordered text-center">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (TipoGastoDTOListado item in Model)
-            {
-                <tr>
-                    <td>@item.Nombre</td>
-                    <td>@item.Descripcion</td>
-                    <td>
-                        <form asp-action="Delete" asp-controller="TipoGasto" method="post">
-                            <input type="hidden" name="ID" value="@item.ID" />
-                            <button type="submit">Borrar</button>
-                        </form>
-                        @Html.ActionLink("Modificar", "LoadUpdate", "TipoGasto", new { id = item.ID })
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <!-- Mensajes -->
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.msg) || TempData["msg"] != null)
+        {
+            var tipo = string.IsNullOrEmpty(ViewBag.msgType) && TempData["msgType"] == null ? "alert-danger" : "alert-success";
+            <div id="alertModal" class="alert @tipo alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index:1050;">
+                <p class="m-0">@ViewBag.msg@TempData["msg"]</p>
+            </div>
+        }
+    }
 </div>

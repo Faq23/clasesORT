@@ -20,12 +20,13 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
 
         public IEnumerable<Equipo> GetAll()
         {
-            return _context.Equipos;
+            return _context.Equipos
+                .ToList();
         }
 
         public Equipo GetByID(int ID)
         {
-            return _context.Equipos.Single(equipo => equipo.ID == ID);
+            return _context.Equipos.SingleOrDefault(equipo => equipo.ID == ID);
         }
     }
 }

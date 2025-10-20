@@ -1,6 +1,6 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Equipos;
 using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.Equipo;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {

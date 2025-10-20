@@ -1,4 +1,5 @@
-﻿using Obligatorio.LogicaNegocio.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using Obligatorio.LogicaNegocio.Entidades;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
 namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
@@ -32,12 +33,16 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
 
         public IEnumerable<Usuario> GetAll()
         {
-            return _context.Usuarios;
+            return _context.Usuarios
+                .Include(Usuario => Usuario.Equipo)
+                .ToList();
         }
 
         public Usuario GetByID(int ID)
         {
-            return _context.Usuarios.Single(usuario => usuario.ID == ID);
+            return _context.Usuarios
+                .Include(u => u.Equipo)
+                .Single(usuario => usuario.ID == ID);
         }
     }
 }
