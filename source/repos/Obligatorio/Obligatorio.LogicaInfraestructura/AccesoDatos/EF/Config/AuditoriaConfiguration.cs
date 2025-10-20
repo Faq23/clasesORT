@@ -14,11 +14,13 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF.Config
             }
             );
 
-            builder.OwnsOne(Auditoria => Auditoria.NombreUsuario, VoNombreUsuarioAuditoria =>
+            builder.OwnsOne(Auditoria => Auditoria.EmailUsuario, VoNombreUsuarioAuditoria =>
             {
-                VoNombreUsuarioAuditoria.Property(p => p.Value).HasColumnName("NombreUsuario");
+                VoNombreUsuarioAuditoria.Property(p => p.Value).HasColumnName("EmailUsuario");
             }
             );
+
+            builder.Property(Auditoria => Auditoria.FechaAccion).HasColumnName("FechaAccion");
         }
     }
 }

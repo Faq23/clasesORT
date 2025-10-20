@@ -1,6 +1,6 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Auditorias;
 using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.Auditoria;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {
@@ -10,7 +10,7 @@ namespace Obligatorio.LogicaAplicacion.Mapper
         {
             return new Auditoria(
                 new DescripcionAuditoria(auditoriaDTO.Descripcion),
-                new NombreUsuarioAuditoria(auditoriaDTO.NombreUsuario),
+                new EmailUsuarioAuditoria(auditoriaDTO.EmailUsuario),
                 auditoriaDTO.FechaAccion);
         }
     }

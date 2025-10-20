@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Obligatorio.LogicaAplicacion.CasosUso.Usuarios;
+using Obligatorio.LogicaAplicacion.dtos.Auditorias;
 using Obligatorio.LogicaAplicacion.dtos.Equipos;
 using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
@@ -21,6 +22,8 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
         private ICUGetByID<EquipoDTOListado> _getEquipo;
         private ICUGetAll<EquipoDTOListado> _getEquipos;
 
+        private ICUAdd<AuditoriaDTOAlta> _addAuditoria;
+
         private UsuarioDTOListado usuarioActivo;
 
         public UsuarioController(
@@ -32,7 +35,8 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
             LoginUsuario loginUsuario,
             ICUListaMayorMonto<UsuarioDTOListadoConMonto> getPorMonto,
             ICUGetByID<EquipoDTOListado> getEquipo,
-            ICUGetAll<EquipoDTOListado> getEquipos
+            ICUGetAll<EquipoDTOListado> getEquipos,
+            ICUAdd<AuditoriaDTOAlta> addAuditoria
             )
         {
             _add = add;
@@ -44,6 +48,7 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
             _getPorMonto = getPorMonto;
             _getEquipo = getEquipo;
             _getEquipos = getEquipos;
+            _addAuditoria = addAuditoria;
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -99,6 +104,12 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
                             idEquipo,
                             _getEquipo.Execute(idEquipo),
                             tipo));
+
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Se creo el usuario para [Nombre: {nombre}, Apellido: {apellido}]",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
                 }
                 else
                 {
@@ -130,6 +141,12 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
                     HttpContext.Session.SetString("TipoUsuario", usuarioLogueado.Tipo);
                     HttpContext.Session.SetInt32("IDUsuario", usuarioLogueado.ID);
 
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Login Usuario {usuarioLogueado.ID}",
+                        usuarioLogueado.Email,
+                        DateTime.Now
+                    ));
+
                     return Redirect($"/{usuarioLogueado.Tipo}/Index");
                 }
                 else
@@ -159,8 +176,20 @@ namespace Obligatorio.WebApp.Controllers.Usuarios
 
                 if (usuariosObtenidos.Any())
                 {
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Usuario {usuarioActivo.ID} cargó lista Usuarios por Monto >= {monto}",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
+
                     return View(_getPorMonto.Execute(monto));
                 }
+
+                _addAuditoria.Execute(new AuditoriaDTOAlta(
+                    $"Usuario {usuarioActivo.ID} no trajo datos en lista Usuarios por Monto >= {monto}",
+                    usuarioActivo.Email,
+                    DateTime.Now
+                ));
 
                 TempData["msg"] = "No se encontraron usuarios";
 

@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Obligatorio.LogicaAplicacion.CasosUso.Auditorias;
 using Obligatorio.LogicaAplicacion.CasosUso.Equipos;
 using Obligatorio.LogicaAplicacion.CasosUso.Pagos;
 using Obligatorio.LogicaAplicacion.CasosUso.TiposGasto;
 using Obligatorio.LogicaAplicacion.CasosUso.Usuarios;
+using Obligatorio.LogicaAplicacion.dtos.Auditorias;
 using Obligatorio.LogicaAplicacion.dtos.Equipos;
 using Obligatorio.LogicaAplicacion.dtos.Pagos;
 using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
@@ -42,6 +44,7 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<IRepositorioTipoGasto, RepositorioTipoGasto>();
             builder.Services.AddScoped<IRepositorioPagoRecurrente, RepositorioPagoRecurrente>();
             builder.Services.AddScoped<IRepositorioPagoUnico, RepositorioPagoUnico>();
+            builder.Services.AddScoped<IRepositorioAuditoria, RepositorioAuditoria>();
 
             // Inyeccion de Caso de Uso
             // Equipo
@@ -76,6 +79,10 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<ICUGetAll<PagoUnicoDTOListado>, GetAllPagosUnicos>();
             builder.Services.AddScoped<ICUGetByID<PagoUnicoDTOListado>, GetByIDPagoUnico>();
             builder.Services.AddScoped<ICUPagoMensualList<PagoUnicoDTOListadoConSaldo>, ListarPagosUnicosMensual>();
+
+            // Auditory
+
+            builder.Services.AddScoped<ICUAdd<AuditoriaDTOAlta>, AddAuditoria>();
 
             // Precarga de datos
             builder.Services.AddScoped<SeedData>();

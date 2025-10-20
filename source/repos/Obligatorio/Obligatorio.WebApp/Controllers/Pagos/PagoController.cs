@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Obligatorio.LogicaAplicacion.dtos.Auditorias;
 using Obligatorio.LogicaAplicacion.dtos.Pagos;
 using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaAplicacion.dtos.Usuarios;
@@ -27,6 +28,7 @@ namespace Obligatorio.WebApp.Controllers.Pagos
         private ICUGetByID<UsuarioDTOListado> _getUsuario;
         private ICUGetByID<TipoGastoDTOListado> _getTipoGasto;
         private ICUGetAll<TipoGastoDTOListado> _getTiposGasto;
+        private ICUAdd<AuditoriaDTOAlta> _addAuditoria;
 
         private UsuarioDTOListado usuarioActivo;
 
@@ -40,7 +42,8 @@ namespace Obligatorio.WebApp.Controllers.Pagos
             ICUGetByID<TipoGastoDTOListado> getTipoGasto,
             ICUGetAll<TipoGastoDTOListado> getTiposGasto,
             ICUPagoMensualList<PagoRecurrenteDTOListadoConSaldo> recurrenteConSaldo,
-            ICUPagoMensualList<PagoUnicoDTOListadoConSaldo> unicoConSaldo
+            ICUPagoMensualList<PagoUnicoDTOListadoConSaldo> unicoConSaldo,
+            ICUAdd<AuditoriaDTOAlta> addAuditoria
             )
         {
             _addRecurrente = addRecurrente;
@@ -53,6 +56,7 @@ namespace Obligatorio.WebApp.Controllers.Pagos
             _getUsuario = getUsuario;
             _getTipoGasto = getTipoGasto;
             _getTiposGasto = getTiposGasto;
+            _addAuditoria = addAuditoria;
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -113,6 +117,14 @@ namespace Obligatorio.WebApp.Controllers.Pagos
                     fechaFin
                     ));
 
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Se creo Pago Recurrente para [Descripcion: {descripcion}, " +
+                        $"Monto: {monto}, Metodo de Pago: {metodoPago}, " +
+                        $"Fecha Inicio: {fechaInicio}, Fecha Fin: {fechaFin}]",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
+
                     TempData["msgType"] = "Sucess";
                     TempData["msg"] = "Pago agregado correctamente";
                 }
@@ -146,6 +158,14 @@ namespace Obligatorio.WebApp.Controllers.Pagos
                     numeroRecibo
                     ));
 
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Se creo Pago Unico para [Descripcion: {descripcion}, " +
+                        $"Monto: {monto}, Metodo de Pago: {metodoPago}, " +
+                        $"Fecha Pago: {fechaPago}, Numero de Recibo: {numeroRecibo}]",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
+
                     TempData["msgType"] = "Sucess";
                     TempData["msg"] = "Pago agregado correctamente";
                 }
@@ -175,12 +195,24 @@ namespace Obligatorio.WebApp.Controllers.Pagos
 
             if (!listaRecurrente.Any() && !listaUnico.Any())
             {
+                _addAuditoria.Execute(new AuditoriaDTOAlta(
+                    $"No se obtuvieron datos para la Fecha: {month} / {year}",
+                    usuarioActivo.Email,
+                    DateTime.Now
+                ));
+
                 TempData["msg"] = "No se encontraron Pagos para la fecha seleccionada";
             }
             else
             {
                 ViewData["PagosRecurrentes"] = listaRecurrente;
                 ViewData["PagosUnicos"] = listaUnico;
+
+                _addAuditoria.Execute(new AuditoriaDTOAlta(
+                    $"Se obtuvieron datos para la Fecha: {month} / {year}",
+                    usuarioActivo.Email,
+                    DateTime.Now
+                ));
             }
 
             return View();

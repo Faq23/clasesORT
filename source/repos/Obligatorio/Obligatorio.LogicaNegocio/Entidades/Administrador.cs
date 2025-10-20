@@ -1,4 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.vo;
+﻿using Obligatorio.LogicaNegocio.vo.Usuario;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {

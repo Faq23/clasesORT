@@ -1,5 +1,5 @@
 ﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.TipoGasto;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {

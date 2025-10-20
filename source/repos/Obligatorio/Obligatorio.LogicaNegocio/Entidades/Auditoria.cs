@@ -1,5 +1,5 @@
 ﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.Auditoria;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {
@@ -7,15 +7,15 @@ namespace Obligatorio.LogicaNegocio.Entidades
     {
         public int ID { get; set; }
         public DescripcionAuditoria Descripcion { get; set; }
-        public NombreUsuarioAuditoria NombreUsuario { get; set; }
+        public EmailUsuarioAuditoria EmailUsuario { get; set; }
         public DateTime FechaAccion { get; set; }
 
         protected Auditoria() { }
 
-        public Auditoria(DescripcionAuditoria descripcion, NombreUsuarioAuditoria nombreUsuario, DateTime fechaAccion)
+        public Auditoria(DescripcionAuditoria descripcion, EmailUsuarioAuditoria emailUsuario, DateTime fechaAccion)
         {
             Descripcion = descripcion;
-            NombreUsuario = nombreUsuario;
+            EmailUsuario = emailUsuario;
             FechaAccion = fechaAccion;
         }
 

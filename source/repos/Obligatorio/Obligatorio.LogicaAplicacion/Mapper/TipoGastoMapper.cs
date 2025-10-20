@@ -1,6 +1,6 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaNegocio.Entidades;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.TipoGasto;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {

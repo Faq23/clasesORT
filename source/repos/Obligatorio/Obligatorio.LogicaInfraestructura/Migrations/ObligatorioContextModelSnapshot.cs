@@ -30,6 +30,10 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<DateTime>("FechaAccion")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("FechaAccion");
+
                     b.HasKey("ID");
 
                     b.ToTable("Auditorias");
@@ -174,7 +178,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Auditoria", b =>
                 {
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.DescripcionAuditoria", "Descripcion", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Auditoria.DescripcionAuditoria", "Descripcion", b1 =>
                         {
                             b1.Property<int>("AuditoriaID")
                                 .HasColumnType("int");
@@ -192,7 +196,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("AuditoriaID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreUsuarioAuditoria", "NombreUsuario", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Auditoria.EmailUsuarioAuditoria", "EmailUsuario", b1 =>
                         {
                             b1.Property<int>("AuditoriaID")
                                 .HasColumnType("int");
@@ -200,7 +204,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                             b1.Property<string>("Value")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)")
-                                .HasColumnName("NombreUsuario");
+                                .HasColumnName("EmailUsuario");
 
                             b1.HasKey("AuditoriaID");
 
@@ -213,13 +217,13 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                     b.Navigation("Descripcion")
                         .IsRequired();
 
-                    b.Navigation("NombreUsuario")
+                    b.Navigation("EmailUsuario")
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Equipo", b =>
                 {
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreEquipo", "Nombre", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Equipo.NombreEquipo", "Nombre", b1 =>
                         {
                             b1.Property<int>("EquipoID")
                                 .HasColumnType("int");
@@ -255,7 +259,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.DescripcionPago", "DescripcionPago", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Pago.DescripcionPago", "DescripcionPago", b1 =>
                         {
                             b1.Property<int>("PagoID")
                                 .HasColumnType("int");
@@ -273,7 +277,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("PagoID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.MontoPago", "MontoPago", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Pago.MontoPago", "MontoPago", b1 =>
                         {
                             b1.Property<int>("PagoID")
                                 .HasColumnType("int");
@@ -303,7 +307,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.TipoGasto", b =>
                 {
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Descripcion", "Descripcion", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.TipoGasto.Descripcion", "Descripcion", b1 =>
                         {
                             b1.Property<int>("TipoGastoID")
                                 .HasColumnType("int");
@@ -321,7 +325,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("TipoGastoID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreGasto", "NombreGasto", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.TipoGasto.NombreGasto", "NombreGasto", b1 =>
                         {
                             b1.Property<int>("TipoGastoID")
                                 .HasColumnType("int");
@@ -357,7 +361,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Apellido", "Apellido", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Usuario.Apellido", "Apellido", b1 =>
                         {
                             b1.Property<int>("UsuarioID")
                                 .HasColumnType("int");
@@ -375,7 +379,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("UsuarioID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Contrasena", "Contrasena", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Usuario.Contrasena", "Contrasena", b1 =>
                         {
                             b1.Property<int>("UsuarioID")
                                 .HasColumnType("int");
@@ -393,7 +397,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("UsuarioID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Email", "Email", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Usuario.Email", "Email", b1 =>
                         {
                             b1.Property<int>("UsuarioID")
                                 .HasColumnType("int");
@@ -411,7 +415,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("UsuarioID");
                         });
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Nombre", "Nombre", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Usuario.Nombre", "Nombre", b1 =>
                         {
                             b1.Property<int>("UsuarioID")
                                 .HasColumnType("int");
@@ -446,7 +450,7 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.PagoUnico", b =>
                 {
-                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NumeroRecibo", "NumeroRecibo", b1 =>
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.Pago.NumeroRecibo", "NumeroRecibo", b1 =>
                         {
                             b1.Property<int>("PagoUnicoID")
                                 .HasColumnType("int");

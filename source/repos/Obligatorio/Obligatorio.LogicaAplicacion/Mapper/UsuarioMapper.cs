@@ -1,7 +1,7 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaNegocio.Entidades;
 using Obligatorio.LogicaNegocio.Factories;
-using Obligatorio.LogicaNegocio.vo;
+using Obligatorio.LogicaNegocio.vo.Usuario;
 
 namespace Obligatorio.LogicaAplicacion.Mapper
 {

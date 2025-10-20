@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Obligatorio.LogicaAplicacion.dtos.Auditorias;
 using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
@@ -16,6 +17,8 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
 
         private ICUGetByID<UsuarioDTOListado> _getUsuario;
 
+        private ICUAdd<AuditoriaDTOAlta> _addAuditoria;
+
         private UsuarioDTOListado usuarioActivo;
         public TipoGastoController(
             ICUAdd<TipoGastoDTOAlta> add,
@@ -23,7 +26,8 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
             ICUGetByID<TipoGastoDTOListado> getByID,
             ICUDelete<TipoGastoDTOListado> delete,
             ICUUpdate<TipoGastoDTOAlta> update,
-            ICUGetByID<UsuarioDTOListado> getUsuario
+            ICUGetByID<UsuarioDTOListado> getUsuario,
+            ICUAdd<AuditoriaDTOAlta> addAuditoria
             )
         {
             _add = add;
@@ -33,6 +37,8 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
             _update = update;
 
             _getUsuario = getUsuario;
+
+            _addAuditoria = addAuditoria;
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -73,6 +79,12 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
                         descripcionTipoGasto
                     ));
 
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Se creo el Tipo Gasto para [Nombre: {nombreTipoGasto}, Descripcion: {descripcionTipoGasto}]",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
+
                     TempData["msgType"] = "Success";
                     TempData["msg"] = "Tipo de Gasto agregado correctamente";
                 }
@@ -109,6 +121,12 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
                 {
                     _update.Execute(idTipoGasto, new TipoGastoDTOAlta(newNombre, newDescripcion));
 
+                    _addAuditoria.Execute(new AuditoriaDTOAlta(
+                        $"Se modificó el Tipo Gasto por [Nombre: {newNombre}, Descripcion: {newDescripcion}]",
+                        usuarioActivo.Email,
+                        DateTime.Now
+                    ));
+
                     TempData["msgType"] = "Success";
                     TempData["msg"] = $"Tipo de Gasto: {idTipoGasto} fue modificado correctamente";
                 }
@@ -134,6 +152,12 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
             try
             {
                 _delete.Execute(ID);
+
+                _addAuditoria.Execute(new AuditoriaDTOAlta(
+                    $"Se eliminó Tipo Gasto {ID}",
+                    usuarioActivo.Email,
+                    DateTime.Now
+                ));
 
                 TempData["msgType"] = "Success";
                 TempData["msg"] = $"Tipo de Gasto: {ID} fue eliminado correctamente";

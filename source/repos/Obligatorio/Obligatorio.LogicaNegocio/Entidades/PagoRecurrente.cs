@@ -1,4 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.vo;
+﻿using Obligatorio.LogicaNegocio.vo.Pago;
 
 namespace Obligatorio.LogicaNegocio.Entidades
 {
