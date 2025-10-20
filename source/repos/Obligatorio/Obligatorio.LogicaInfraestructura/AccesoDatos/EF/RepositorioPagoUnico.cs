@@ -1,4 +1,5 @@
-﻿using Obligatorio.LogicaNegocio.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using Obligatorio.LogicaNegocio.Entidades;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
 namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
@@ -22,6 +23,9 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
         {
             return _context.Pagos
                     .OfType<PagoUnico>()
+                    .Include(PagoUnico => PagoUnico.Usuario)
+                    .Include(PagoUnico => PagoUnico.Usuario.Equipo)
+                    .Include(PagoUnico => PagoUnico.TipoGastoAsociado)
                     .ToList();
         }
 
@@ -29,6 +33,9 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
         {
             return _context.Pagos
                 .OfType<PagoUnico>()
+                .Include(PagoUnico => PagoUnico.Usuario)
+                .Include(PagoUnico => PagoUnico.Usuario.Equipo)
+                .Include(PagoUnico => PagoUnico.TipoGastoAsociado)
                 .SingleOrDefault(pago => pago.ID == ID);
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion
+﻿namespace Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion.Usuario
 {
     public interface ICUEmailGenerator
     {

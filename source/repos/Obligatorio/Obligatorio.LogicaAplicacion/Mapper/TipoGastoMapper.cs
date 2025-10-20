@@ -14,6 +14,15 @@ namespace Obligatorio.LogicaAplicacion.Mapper
                 );
         }
 
+        public static TipoGasto existantFromDTO(TipoGastoDTOAlta tipoGastoDTO)
+        {
+            return new TipoGasto(
+                new NombreGasto(tipoGastoDTO.Nombre),
+                new Descripcion(tipoGastoDTO.Descripcion)
+                );
+        }
+
+
         public static TipoGastoDTOListado ToDTO(TipoGasto tipoGasto)
         {
             return new TipoGastoDTOListado(

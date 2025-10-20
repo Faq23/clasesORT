@@ -19,6 +19,13 @@ namespace Obligatorio.WebApp.Controllers
             return RedirectToAction("Login", "Usuario");
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            Response.Cookies.Delete(".AspNetCore.Session");
+            return RedirectToAction("Login", "Usuario");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

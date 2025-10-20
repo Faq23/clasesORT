@@ -6,6 +6,7 @@ namespace Obligatorio.LogicaAplicacion.dtos.Pagos
     public record PagoDTOListado(
         int ID,
         string Descripcion,
+        int Monto,
         int IDUsuario,
         UsuarioDTOListado Usuario,
         string MetodoPago,

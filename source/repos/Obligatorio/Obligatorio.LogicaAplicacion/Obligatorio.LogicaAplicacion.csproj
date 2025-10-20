@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Obligatorio.Compartido\Obligatorio.Compartido.csproj" />
     <ProjectReference Include="..\Obligatorio.LogicaNegocio\Obligatorio.LogicaNegocio.csproj" />
   </ItemGroup>
 

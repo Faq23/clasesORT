@@ -11,6 +11,8 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF.Config
             builder.OwnsOne(TipoGasto => TipoGasto.NombreGasto, VoNombreGasto =>
             {
                 VoNombreGasto.Property(p => p.Value).HasColumnName("Nombre");
+
+                VoNombreGasto.HasIndex(p => p.Value).IsUnique();
             }
             );
 

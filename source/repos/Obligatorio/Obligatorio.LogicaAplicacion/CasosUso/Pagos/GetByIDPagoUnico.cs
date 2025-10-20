@@ -15,7 +15,9 @@ namespace Obligatorio.LogicaAplicacion.CasosUso.Pagos
         }
         public PagoUnicoDTOListado Execute(int id)
         {
-            return PagoMapper.ToDTO(_repo.GetByID(id));
+            if (_repo.GetByID(id) != null) return PagoMapper.ToDTO(_repo.GetByID(id));
+
+            return null;
         }
     }
 }

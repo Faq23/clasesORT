@@ -15,6 +15,8 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF.Config
             builder.OwnsOne(PagoUnico => PagoUnico.NumeroRecibo, VoNumeroRecibo =>
             {
                 VoNumeroRecibo.Property(p => p.Value).HasColumnName("NumeroRecibo");
+
+                VoNumeroRecibo.HasIndex(p => p.Value).IsUnique();
             }
             );
         }

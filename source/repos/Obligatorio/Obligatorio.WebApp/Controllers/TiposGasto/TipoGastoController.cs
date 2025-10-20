@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Obligatorio.LogicaAplicacion.dtos.Equipos;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
+using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
 
 namespace Obligatorio.WebApp.Controllers.TiposGasto
@@ -13,14 +14,16 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
         private ICUDelete<TipoGastoDTOListado> _delete;
         private ICUUpdate<TipoGastoDTOAlta> _update;
 
-        private ICUAdd<EquipoDTOAlta> _r;
+        private ICUGetByID<UsuarioDTOListado> _getUsuario;
 
+        private UsuarioDTOListado usuarioActivo;
         public TipoGastoController(
             ICUAdd<TipoGastoDTOAlta> add,
             ICUGetAll<TipoGastoDTOListado> getAll,
             ICUGetByID<TipoGastoDTOListado> getByID,
             ICUDelete<TipoGastoDTOListado> delete,
-            ICUUpdate<TipoGastoDTOAlta> update
+            ICUUpdate<TipoGastoDTOAlta> update,
+            ICUGetByID<UsuarioDTOListado> getUsuario
             )
         {
             _add = add;
@@ -28,6 +31,29 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
             _getByID = getByID;
             _delete = delete;
             _update = update;
+
+            _getUsuario = getUsuario;
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
+
+            int idUsuario = HttpContext.Session.GetInt32("IDUsuario") ?? -1;
+
+            if (idUsuario == -1)
+            {
+                context.Result = RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                usuarioActivo = _getUsuario.Execute(idUsuario);
+
+                if (usuarioActivo.Tipo != "Administrador")
+                {
+                    context.Result = Redirect($"/{HttpContext.Session.GetString("TipoUsuario")}/Index");
+                }
+            }
         }
 
         public IActionResult Index()
@@ -38,12 +64,22 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
         [HttpPost]
         public IActionResult Create(string nombreTipoGasto, string descripcionTipoGasto)
         {
-            if (!string.IsNullOrEmpty(nombreTipoGasto) || !string.IsNullOrEmpty(descripcionTipoGasto))
+            try
             {
-                _add.Execute(new TipoGastoDTOAlta(
-               nombreTipoGasto,
-               descripcionTipoGasto
-               ));
+                if (!string.IsNullOrEmpty(nombreTipoGasto) || !string.IsNullOrEmpty(descripcionTipoGasto))
+                {
+                    _add.Execute(new TipoGastoDTOAlta(
+                        nombreTipoGasto,
+                        descripcionTipoGasto
+                    ));
+
+                    TempData["msgType"] = "Success";
+                    TempData["msg"] = "Tipo de Gasto agregado correctamente";
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = ex.Message;
             }
 
             return RedirectToAction("Index");
@@ -52,16 +88,42 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
         [HttpGet]
         public IActionResult LoadUpdate(int ID)
         {
-            return View("Update", _getByID.Execute(ID));
+            try
+            {
+                return View("Update", _getByID.Execute(ID));
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = ex.Message;
+                return RedirectToAction("Index");
+            }
+
         }
 
         [HttpPost]
         public IActionResult Update(int idTipoGasto, string newNombre, string newDescripcion)
         {
-            if (!string.IsNullOrEmpty(newNombre) || !string.IsNullOrEmpty(newDescripcion))
+            try
             {
-                _update.Execute(idTipoGasto, new TipoGastoDTOAlta(newNombre, newDescripcion));
+                if (!string.IsNullOrEmpty(newNombre) && !string.IsNullOrEmpty(newDescripcion))
+                {
+                    _update.Execute(idTipoGasto, new TipoGastoDTOAlta(newNombre, newDescripcion));
+
+                    TempData["msgType"] = "Success";
+                    TempData["msg"] = $"Tipo de Gasto: {idTipoGasto} fue modificado correctamente";
+                }
+                else
+                {
+                    ViewBag.msg = "No se deben dejar campos sin completar.";
+                    return View("Update", _getByID.Execute(idTipoGasto));
+                }
             }
+            catch (Exception ex)
+            {
+                ViewBag.msg = ex.Message;
+                return View("Update", _getByID.Execute(idTipoGasto));
+            }
+
 
             return RedirectToAction("Index");
         }
@@ -69,7 +131,18 @@ namespace Obligatorio.WebApp.Controllers.TiposGasto
         [HttpPost]
         public IActionResult Delete(int ID)
         {
-            _delete.Execute(ID);
+            try
+            {
+                _delete.Execute(ID);
+
+                TempData["msgType"] = "Success";
+                TempData["msg"] = $"Tipo de Gasto: {ID} fue eliminado correctamente";
+
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = ex.Message;
+            }
 
             return RedirectToAction("Index");
         }

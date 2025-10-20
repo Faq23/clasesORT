@@ -3,7 +3,7 @@ using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public class NumeroRecibo : IValidable
+    public record NumeroRecibo : IValidable
     {
         public int Value { get; private set; }
 
@@ -16,7 +16,10 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
-            throw new NumeroReciboException();
+            if (Value <= 0)
+            {
+                throw new NumeroReciboException();
+            }
         }
     }
 }

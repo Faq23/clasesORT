@@ -1,7 +1,7 @@
 ﻿using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaAplicacion.Mapper;
 using Obligatorio.LogicaNegocio.InterfacesDominio;
-using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
+using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion.Usuario;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 using System.Globalization;
 
@@ -18,8 +18,8 @@ namespace Obligatorio.LogicaAplicacion.CasosUso.Usuarios
 
         public string Execute(string firstPart, string lastPart)
         {
-            string emailBase = Normalizar(firstPart.Substring(0, Math.Min(3, firstPart.Length))) +
-                               Normalizar(lastPart.Substring(0, Math.Min(3, lastPart.Length))); // Con Math.Min() Tengo en cuenta los apellidos con menos de 3 letras.
+            string emailBase = Normalizar(firstPart.Substring(0, Math.Min(3, firstPart.Length))).ToLower() +
+                               Normalizar(lastPart.Substring(0, Math.Min(3, lastPart.Length))).ToLower(); // Con Math.Min() Tengo en cuenta los apellidos con menos de 3 letras.
             string emailDomain = "@laempresa.com";
 
             if (ValidarExistente(emailBase + emailDomain))

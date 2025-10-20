@@ -9,8 +9,8 @@ namespace Obligatorio.LogicaNegocio.Entidades
 
         public PagoUnico() : base() { }
 
-        public PagoUnico(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago, DateTime fechaPago, NumeroRecibo numeroRecibo)
-            : base(metodoPago, IDTipoGasto, tipoGastoAsociado, IDUsuario, usuario, descripcionPago)
+        public PagoUnico(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago, MontoPago montoPago, DateTime fechaPago, NumeroRecibo numeroRecibo)
+            : base(metodoPago, IDTipoGasto, tipoGastoAsociado, IDUsuario, usuario, descripcionPago, montoPago)
         {
             FechaPago = fechaPago;
             NumeroRecibo = numeroRecibo;

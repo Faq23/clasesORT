@@ -1,6 +1,6 @@
 ﻿namespace Obligatorio.LogicaAplicacion.dtos.TiposGasto
 {
-    public record TipoGastoDTOListado(string Nombre, string Descripcion)
+    public record TipoGastoDTOListado(int ID, string Nombre, string Descripcion)
     {
     }
 }

@@ -1,23 +1,50 @@
 ﻿@using Obligatorio.LogicaAplicacion.dtos.TiposGasto
 @model TipoGastoDTOListado
 
-<div>
-    <h1>Modificar </h1>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold text-primary">Modificar Tipo de Gasto</h1>
+        <p class="text-muted">Actualizá los datos del tipo de gasto seleccionado.</p>
+    </div>
 
-    <form asp-action="Update" asp-controller="TipoGasto" method="post">
-        <div>
-            <input type="hidden" name="idTipoGasto" value="@Model.ID" />
-        </div>
-
-        <div>
-            <input type="text" name="newNombre" placeholder="Nombre..." value="@Model.Nombre" />
-        </div>
-        <div>
-            <input type="text" name="newDescripcion" placeholder="Descripcion..." value="@Model.Descripcion" />
+    <div class="card shadow-sm mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Editar Tipo de Gasto</h5>
         </div>
 
-        <div>
-            <input type="submit" value="Modificar" />
+        <div class="card-body">
+            <form asp-action="Update" asp-controller="TipoGasto" method="post" class="row g-3">
+                <input type="hidden" name="idTipoGasto" value="@Model.ID" />
+
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Nombre</label>
+                    <input type="text" name="newNombre" class="form-control" placeholder="Nombre..." value="@Model.Nombre" required />
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Descripción</label>
+                    <input type="text" name="newDescripcion" class="form-control" placeholder="Descripción..." value="@Model.Descripcion" required />
+                </div>
+
+                <div class="col-12 d-flex justify-content-between mt-3">
+                    <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="TipoGasto">Volver</a>
+                    <button type="submit" class="btn btn-success px-4">Modificar</button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+
+    <!-- Mensajes -->
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.msg) || TempData["msg"] != null)
+        {
+            var tipo = string.IsNullOrEmpty(ViewBag.msgType) && TempData["msgType"] == null ? "alert-danger" : "alert-success";
+            <div id="alertModal"
+                 class="alert @tipo alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow"
+                 role="alert"
+                 style="z-index: 1050;">
+                <p class="m-0">@ViewBag.msg@TempData["msg"]</p>
+            </div>
+        }
+    }
 </div>

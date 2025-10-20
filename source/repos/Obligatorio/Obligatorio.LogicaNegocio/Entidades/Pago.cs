@@ -1,5 +1,4 @@
-﻿using Obligatorio.LogicaNegocio.Excepciones.Pago;
-using Obligatorio.LogicaNegocio.InterfacesDominio;
+﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
 using Obligatorio.LogicaNegocio.vo;
 
 namespace Obligatorio.LogicaNegocio.Entidades
@@ -8,6 +7,8 @@ namespace Obligatorio.LogicaNegocio.Entidades
     {
         public int ID { get; set; }
         public DescripcionPago DescripcionPago { get; set; }
+
+        public MontoPago MontoPago { get; set; }
 
         // Relaciones
 
@@ -21,20 +22,18 @@ namespace Obligatorio.LogicaNegocio.Entidades
 
         public Pago() { }
 
-        public Pago(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago)
+        public Pago(MetodoPago metodoPago, int IDTipoGasto, TipoGasto tipoGastoAsociado, int IDUsuario, Usuario usuario, DescripcionPago descripcionPago, MontoPago montoPago)
         {
             MetodoPago = metodoPago;
             TipoGastoAsociado = tipoGastoAsociado;
             Usuario = usuario;
             DescripcionPago = descripcionPago;
+            MontoPago = montoPago;
 
             Validar();
         }
 
-        public void Validar()
-        {
-            throw new PagoException();
-        }
+        public void Validar() { }
 
     }
 }

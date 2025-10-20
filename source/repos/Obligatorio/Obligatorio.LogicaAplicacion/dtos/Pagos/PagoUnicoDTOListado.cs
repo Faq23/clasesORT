@@ -6,6 +6,7 @@ namespace Obligatorio.LogicaAplicacion.dtos.Pagos
     public record PagoUnicoDTOListado(
         int ID,
         string Descripcion,
+        int Monto,
         int IDUsuario,
         UsuarioDTOListado Usuario,
         string MetodoPago,
@@ -13,7 +14,7 @@ namespace Obligatorio.LogicaAplicacion.dtos.Pagos
         TipoGastoDTOListado TipoGastoAsociado,
         DateTime FechaPago,
         int NumeroRecibo
-        ) : PagoDTOListado(ID, Descripcion, IDUsuario, Usuario, MetodoPago, IDTipoGasto, TipoGastoAsociado)
+        ) : PagoDTOListado(ID, Descripcion, Monto, IDUsuario, Usuario, MetodoPago, IDTipoGasto, TipoGastoAsociado)
     {
     }
 }

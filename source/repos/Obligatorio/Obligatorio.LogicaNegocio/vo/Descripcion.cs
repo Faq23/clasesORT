@@ -1,8 +1,9 @@
-﻿using Obligatorio.LogicaNegocio.InterfacesDominio;
+﻿using Obligatorio.LogicaNegocio.Excepciones.TipoGasto;
+using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public class Descripcion : IValidable
+    public record Descripcion : IValidable
     {
         public string Value { get; private set; }
 
@@ -15,6 +16,10 @@ namespace Obligatorio.LogicaNegocio.vo
 
         public void Validar()
         {
+            if (string.IsNullOrEmpty(Value))
+            {
+                throw new DescripcionException();
+            }
         }
     }
 }

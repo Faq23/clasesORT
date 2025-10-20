@@ -9,8 +9,8 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
         public DbSet<Equipo> Equipos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<TipoGasto> TiposGasto { get; set; }
-
         public DbSet<Pago> Pagos { get; set; }
+        public DbSet<Auditoria> Auditorias { get; set; }
 
         public ObligatorioContext(DbContextOptions<ObligatorioContext> options) : base(options) { }
 
@@ -23,9 +23,13 @@ namespace Obligatorio.LogicaInfraestructura.AccesoDatos.EF
             modelBuilder.ApplyConfiguration(new EquipoConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new TipoGastoConfiguration());
+
+            modelBuilder.Owned<MetodoPago>();
+
             modelBuilder.ApplyConfiguration(new PagoConfiguration());
             modelBuilder.ApplyConfiguration(new PagoUnicoConfiguration());
             modelBuilder.ApplyConfiguration(new PagoRecurrenteConfiguration());
+            modelBuilder.ApplyConfiguration(new AuditoriaConfiguration());
         }
     }
 }

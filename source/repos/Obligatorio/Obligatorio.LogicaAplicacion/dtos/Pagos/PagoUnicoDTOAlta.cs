@@ -5,14 +5,15 @@ namespace Obligatorio.LogicaAplicacion.dtos.Pagos
 {
     public record PagoUnicoDTOAlta(
         string Descripcion,
+        int Monto,
         int IDUsuario,
-        UsuarioDTOAlta Usuario,
+        UsuarioDTOListado Usuario,
         string MetodoPago,
         int IDTipoGasto,
-        TipoGastoDTOAlta TipoGastoAsociado,
+        TipoGastoDTOListado TipoGastoAsociado,
         DateTime FechaPago,
         int NumeroRecibo
-        ) : PagoDTOAlta(Descripcion, IDUsuario, Usuario, MetodoPago, IDTipoGasto, TipoGastoAsociado)
+        ) : PagoDTOAlta(Descripcion, Monto, IDUsuario, Usuario, MetodoPago, IDTipoGasto, TipoGastoAsociado)
     {
     }
 }

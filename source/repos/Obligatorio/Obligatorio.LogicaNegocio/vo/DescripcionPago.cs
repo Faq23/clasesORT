@@ -3,7 +3,7 @@ using Obligatorio.LogicaNegocio.InterfacesDominio;
 
 namespace Obligatorio.LogicaNegocio.vo
 {
-    public class DescripcionPago : IValidable
+    public record DescripcionPago : IValidable
     {
         public string Value { get; private set; }
 
@@ -15,7 +15,10 @@ namespace Obligatorio.LogicaNegocio.vo
         }
         public void Validar()
         {
-            throw new DescripcionPagoException();
+            if (string.IsNullOrEmpty(Value))
+            {
+                throw new DescripcionPagoException();
+            }
         }
     }
 }

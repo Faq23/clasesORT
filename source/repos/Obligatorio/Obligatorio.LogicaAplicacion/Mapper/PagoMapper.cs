@@ -7,33 +7,35 @@ namespace Obligatorio.LogicaAplicacion.Mapper
 {
     public class PagoMapper
     {
-        public static PagoRecurrente FromDTO(PagoRecurrenteDTOAlta pagoDTO)
+        public static PagoRecurrente FromDTO(PagoRecurrenteDTOAlta pagoDTO, TipoGasto tipoGasto, Usuario usuario)
         {
             MetodoPagoFactory mpf = new MetodoPagoFactory();
 
             return new PagoRecurrente(
                     mpf.Crear(pagoDTO.MetodoPago),
                     pagoDTO.IDTipoGasto,
-                    TipoGastoMapper.FromDTO(pagoDTO.TipoGastoAsociado),
+                    tipoGasto,
                     pagoDTO.IDUsuario,
-                    UsuarioMapper.FromDTO(pagoDTO.Usuario),
+                    usuario,
                     new DescripcionPago(pagoDTO.Descripcion),
+                    new MontoPago(pagoDTO.Monto),
                     pagoDTO.FechaInicio,
                     pagoDTO.FechaFin
                 );
         }
 
-        public static PagoUnico FromDTO(PagoUnicoDTOAlta pagoDTO)
+        public static PagoUnico FromDTO(PagoUnicoDTOAlta pagoDTO, TipoGasto tipoGasto, Usuario usuario)
         {
             MetodoPagoFactory mpf = new MetodoPagoFactory();
 
             return new PagoUnico(
                     mpf.Crear(pagoDTO.MetodoPago),
                     pagoDTO.IDTipoGasto,
-                    TipoGastoMapper.FromDTO(pagoDTO.TipoGastoAsociado),
+                    tipoGasto,
                     pagoDTO.IDUsuario,
-                    UsuarioMapper.FromDTO(pagoDTO.Usuario),
+                    usuario,
                     new DescripcionPago(pagoDTO.Descripcion),
+                    new MontoPago(pagoDTO.Monto),
                     pagoDTO.FechaPago,
                     new NumeroRecibo(pagoDTO.NumeroRecibo)
                 );
@@ -44,6 +46,7 @@ namespace Obligatorio.LogicaAplicacion.Mapper
             return new PagoRecurrenteDTOListado(
                 ID: Pago.ID,
                 Descripcion: Pago.DescripcionPago.Value,
+                Monto: Pago.MontoPago.Value,
                 IDUsuario: Pago.IDUsuario,
                 Usuario: UsuarioMapper.ToDTO(Pago.Usuario),
                 MetodoPago: Pago.MetodoPago.ToString(),
@@ -59,6 +62,7 @@ namespace Obligatorio.LogicaAplicacion.Mapper
             return new PagoUnicoDTOListado(
                 ID: Pago.ID,
                 Descripcion: Pago.DescripcionPago.Value,
+                Monto: Pago.MontoPago.Value,
                 IDUsuario: Pago.IDUsuario,
                 Usuario: UsuarioMapper.ToDTO(Pago.Usuario),
                 MetodoPago: Pago.MetodoPago.ToString(),
@@ -66,6 +70,40 @@ namespace Obligatorio.LogicaAplicacion.Mapper
                 TipoGastoAsociado: TipoGastoMapper.ToDTO(Pago.TipoGastoAsociado),
                 FechaPago: Pago.FechaPago,
                 NumeroRecibo: Pago.NumeroRecibo.Value
+                );
+        }
+
+        public static PagoRecurrenteDTOListadoConSaldo ToDTO(PagoRecurrente Pago, int montoTotal)
+        {
+            return new PagoRecurrenteDTOListadoConSaldo(
+                ID: Pago.ID,
+                Descripcion: Pago.DescripcionPago.Value,
+                Monto: Pago.MontoPago.Value,
+                IDUsuario: Pago.IDUsuario,
+                Usuario: UsuarioMapper.ToDTO(Pago.Usuario),
+                MetodoPago: Pago.MetodoPago.ToString(),
+                IDTipoGasto: Pago.IDTipoGasto,
+                TipoGastoAsociado: TipoGastoMapper.ToDTO(Pago.TipoGastoAsociado),
+                FechaInicio: Pago.FechaInicio,
+                FechaFin: Pago.FechaFin,
+                SaldoPendiente: montoTotal
+                );
+        }
+
+        public static PagoUnicoDTOListadoConSaldo ToDTO(PagoUnico Pago, int montoTotal)
+        {
+            return new PagoUnicoDTOListadoConSaldo(
+                ID: Pago.ID,
+                Descripcion: Pago.DescripcionPago.Value,
+                Monto: Pago.MontoPago.Value,
+                IDUsuario: Pago.IDUsuario,
+                Usuario: UsuarioMapper.ToDTO(Pago.Usuario),
+                MetodoPago: Pago.MetodoPago.ToString(),
+                IDTipoGasto: Pago.IDTipoGasto,
+                TipoGastoAsociado: TipoGastoMapper.ToDTO(Pago.TipoGastoAsociado),
+                FechaPago: Pago.FechaPago,
+                NumeroRecibo: Pago.NumeroRecibo.Value,
+                SaldoPendiente: montoTotal
                 );
         }
 
@@ -88,6 +126,40 @@ namespace Obligatorio.LogicaAplicacion.Mapper
             foreach (PagoUnico item in pagos)
             {
                 aux.Add(ToDTO(item));
+            }
+
+            return aux;
+        }
+
+        public static IEnumerable<PagoRecurrenteDTOListadoConSaldo> ToListDTOConSaldo(IEnumerable<PagoRecurrente> pagos)
+        {
+            List<PagoRecurrenteDTOListadoConSaldo> aux = new List<PagoRecurrenteDTOListadoConSaldo>();
+
+            foreach (PagoRecurrente item in pagos)
+            {
+                int mesesRestantes = (item.FechaFin.Year - DateTime.Now.Year) * 12
+                                    + item.FechaFin.Month - DateTime.Now.Month
+                                    - (DateTime.Now.Day > item.FechaFin.Day ? 1 : 0); // Esto es para redondear si el día exacto llegó o no.
+
+                aux.Add(ToDTO
+                    (item,
+                    mesesRestantes * item.MontoPago.Value
+                    )
+                );
+            }
+
+            return aux;
+        }
+
+        public static IEnumerable<PagoUnicoDTOListadoConSaldo> ToListDTOConSaldo(IEnumerable<PagoUnico> pagos)
+        {
+            List<PagoUnicoDTOListadoConSaldo> aux = new List<PagoUnicoDTOListadoConSaldo>();
+
+            foreach (PagoUnico item in pagos)
+            {
+
+
+                aux.Add(ToDTO(item, 0));
             }
 
             return aux;

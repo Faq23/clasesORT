@@ -1,16 +1,43 @@
-﻿<div>
-    <h1>Login</h1>
+﻿<div class="d-flex justify-content-center align-items-center m-5">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="text-center mb-4">Inicio de sesión</h2>
 
-    <form method="post">
-        <div>
-            <input type="email" name="emailUsuario" placeholder="Email..." value="" />
-        </div>
-        <div>
-            <input type="password" name="contrasenaUsuario" placeholder="Contraseña..." />
-        </div>
+        <form method="post">
+            <div class="mb-3">
+                <label for="emailUsuario" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailUsuario" name="emailUsuario" placeholder="Ingresá tu email..." required>
+            </div>
 
-        <div>
-            <input type="submit" value="Ingresar" />
-        </div>
-    </form>
+            <div class="mb-3">
+                <label for="contrasenaUsuario" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenaUsuario" name="contrasenaUsuario" placeholder="Ingresá tu contraseña..." required>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </div>
+        </form>
+    </div>
+
 </div>
+
+
+@{
+    if (!string.IsNullOrEmpty(ViewBag.msg) || TempData["msg"] != null) // Chequeo si hay un mensaje que mostrar
+    {
+        if (string.IsNullOrEmpty(ViewBag.msgType) && TempData["msgType"] == null)
+        {
+            <div id="alertModal" class="alert-modal__home alert alert-danger d-flex gap-2" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#842029"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z" /></svg>
+                <p class="m-0">@ViewBag.msg@TempData["msg"]</p>
+            </div>
+        }
+        else
+        {
+            <div id="alertModal" class="alert-modal__home alert alert-success d-flex gap-2" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#0f5132"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg>
+                <p class="m-0">@ViewBag.msg@TempData["msg"]</p>
+            </div>
+        }
+    }
+}

@@ -22,6 +22,19 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Auditoria", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Auditorias");
+                });
+
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Equipo", b =>
                 {
                     b.Property<int>("ID")
@@ -48,6 +61,11 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
                     b.Property<int>("IDUsuario")
                         .HasColumnType("int");
+
+                    b.Property<string>("MetodoPago")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MetodoPago");
 
                     b.Property<string>("TipoPago")
                         .IsRequired()
@@ -154,6 +172,51 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                     b.HasDiscriminator().HasValue("Gerente");
                 });
 
+            modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Auditoria", b =>
+                {
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.DescripcionAuditoria", "Descripcion", b1 =>
+                        {
+                            b1.Property<int>("AuditoriaID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Descripcion");
+
+                            b1.HasKey("AuditoriaID");
+
+                            b1.ToTable("Auditorias");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AuditoriaID");
+                        });
+
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreUsuarioAuditoria", "NombreUsuario", b1 =>
+                        {
+                            b1.Property<int>("AuditoriaID")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("NombreUsuario");
+
+                            b1.HasKey("AuditoriaID");
+
+                            b1.ToTable("Auditorias");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AuditoriaID");
+                        });
+
+                    b.Navigation("Descripcion")
+                        .IsRequired();
+
+                    b.Navigation("NombreUsuario")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Obligatorio.LogicaNegocio.Entidades.Equipo", b =>
                 {
                     b.OwnsOne("Obligatorio.LogicaNegocio.vo.NombreEquipo", "Nombre", b1 =>
@@ -192,24 +255,6 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("Obligatorio.LogicaNegocio.Entidades.MetodoPago", "MetodoPago", b1 =>
-                        {
-                            b1.Property<int>("PagoID")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("TipoMetodoPago")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)")
-                                .HasColumnName("MetodoPago");
-
-                            b1.HasKey("PagoID");
-
-                            b1.ToTable("Pagos");
-
-                            b1.WithOwner()
-                                .HasForeignKey("PagoID");
-                        });
-
                     b.OwnsOne("Obligatorio.LogicaNegocio.vo.DescripcionPago", "DescripcionPago", b1 =>
                         {
                             b1.Property<int>("PagoID")
@@ -228,10 +273,27 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasForeignKey("PagoID");
                         });
 
+                    b.OwnsOne("Obligatorio.LogicaNegocio.vo.MontoPago", "MontoPago", b1 =>
+                        {
+                            b1.Property<int>("PagoID")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("Value")
+                                .HasColumnType("int")
+                                .HasColumnName("Monto");
+
+                            b1.HasKey("PagoID");
+
+                            b1.ToTable("Pagos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PagoID");
+                        });
+
                     b.Navigation("DescripcionPago")
                         .IsRequired();
 
-                    b.Navigation("MetodoPago")
+                    b.Navigation("MontoPago")
                         .IsRequired();
 
                     b.Navigation("TipoGastoAsociado");
@@ -266,10 +328,13 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
 
                             b1.Property<string>("Value")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)")
+                                .HasColumnType("nvarchar(450)")
                                 .HasColumnName("Nombre");
 
                             b1.HasKey("TipoGastoID");
+
+                            b1.HasIndex("Value")
+                                .IsUnique();
 
                             b1.ToTable("TiposGasto");
 
@@ -391,6 +456,10 @@ namespace Obligatorio.LogicaInfraestructura.Migrations
                                 .HasColumnName("NumeroRecibo");
 
                             b1.HasKey("PagoUnicoID");
+
+                            b1.HasIndex("Value")
+                                .IsUnique()
+                                .HasFilter("[NumeroRecibo] IS NOT NULL");
 
                             b1.ToTable("Pagos");
 

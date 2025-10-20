@@ -9,6 +9,8 @@ using Obligatorio.LogicaAplicacion.dtos.TiposGasto;
 using Obligatorio.LogicaAplicacion.dtos.Usuarios;
 using Obligatorio.LogicaInfraestructura.AccesoDatos.EF;
 using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion;
+using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion.Pago;
+using Obligatorio.LogicaNegocio.InterfacesLogicaAplicacion.Usuario;
 using Obligatorio.LogicaNegocio.InterfacesRepositorio;
 
 namespace Obligatorio.WebApp
@@ -54,6 +56,7 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<ICUDelete<UsuarioDTOListado>, DeleteUsuario>();
             builder.Services.AddScoped<ICUEmailGenerator, GenerateEmailUsuario>();
             builder.Services.AddScoped<LoginUsuario, LoginUsuario>();
+            builder.Services.AddScoped<ICUListaMayorMonto<UsuarioDTOListadoConMonto>, GetListaPorMonto>();
 
             // TipoGasto
             builder.Services.AddScoped<ICUAdd<TipoGastoDTOAlta>, AddTipoGasto>();
@@ -67,13 +70,19 @@ namespace Obligatorio.WebApp
             builder.Services.AddScoped<ICUAdd<PagoRecurrenteDTOAlta>, AddPagoRecurrente>();
             builder.Services.AddScoped<ICUGetAll<PagoRecurrenteDTOListado>, GetAllPagosRecurrentes>();
             builder.Services.AddScoped<ICUGetByID<PagoRecurrenteDTOListado>, GetByIDPagoRecurrente>();
+            builder.Services.AddScoped<ICUPagoMensualList<PagoRecurrenteDTOListadoConSaldo>, ListarPagosRecurrentesMensual>();
 
             builder.Services.AddScoped<ICUAdd<PagoUnicoDTOAlta>, AddPagoUnico>();
             builder.Services.AddScoped<ICUGetAll<PagoUnicoDTOListado>, GetAllPagosUnicos>();
             builder.Services.AddScoped<ICUGetByID<PagoUnicoDTOListado>, GetByIDPagoUnico>();
+            builder.Services.AddScoped<ICUPagoMensualList<PagoUnicoDTOListadoConSaldo>, ListarPagosUnicosMensual>();
 
             // Precarga de datos
             builder.Services.AddScoped<SeedData>();
+
+            // API + Swagger
+
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
@@ -84,6 +93,9 @@ namespace Obligatorio.WebApp
                     var seeder = scope.ServiceProvider.GetRequiredService<SeedData>();
                     seeder.Run();
                 }
+
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             // Configure the HTTP request pipeline.
